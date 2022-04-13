@@ -1,0 +1,20 @@
+/* mobile first */
+/* breakpoint small */
+
+body{
+    background-color: bisque;
+}
+
+/* breakpoint medium */
+@media(min-width: 60em){
+    body{
+        background-color: aquamarine;
+    }
+}
+
+/* breakpoint large */
+@media(min-width: 80em){
+    body{
+        background-color: brown;
+    }
+}
