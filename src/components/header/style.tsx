@@ -8,6 +8,10 @@ export const Navbar = styled.div`
     left: 0;
     width: 100%;
     height: 120px;
+
+    @media(min-width: 46em){
+        max-height: 80px;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -23,6 +27,7 @@ export const Left = styled.div`
 
 export const Logo = styled.h1`
     font-family: 'Oswald', sans-serif;
+    margin-right: 10px;
 `;
 
 
@@ -56,5 +61,5 @@ export const Right = styled.div`
 export const MenuContainer = styled.div`
     display: flex;
     align-items: center;
-    padding: 15px;
+    justify-content: space-between;
 `;
