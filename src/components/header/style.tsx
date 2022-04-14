@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const Navbar = styled.div`
-    //background: linear-gradient(to bottom, ,black,darkgrblackay, gray);
+    position: fixed;
     background-color: #121212;
     color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 120px;
 `;
 
@@ -41,6 +44,7 @@ export const SearchContainer = styled.div`
 export const Input = styled.input`
     border: none;
     width: 100%;
+    height: 30px;
 `;
 
 export const Right = styled.div` 
@@ -51,7 +55,6 @@ export const Right = styled.div`
 
 export const MenuContainer = styled.div`
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    padding: 5px;
+    padding: 15px;
 `;
