@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    gap: 20px;
 `;
 
 export const Left = styled.div` 
@@ -27,7 +28,6 @@ export const Left = styled.div`
 
 export const Logo = styled.h1`
     font-family: 'Oswald', sans-serif;
-    margin-right: 10px;
 `;
 
 
@@ -62,4 +62,5 @@ export const MenuContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
 `;
