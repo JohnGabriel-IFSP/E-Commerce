@@ -8,6 +8,7 @@ export const Navbar = styled.div`
     left: 0;
     width: 100%;
     height: 120px;
+    z-index: 20;
 
     @media(min-width: 46em){
         max-height: 80px;
@@ -60,7 +61,6 @@ export const Right = styled.div`
 
 export const MenuContainer = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    align-items: center;    
+    gap: 15px;
 `;
