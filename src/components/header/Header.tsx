@@ -1,6 +1,6 @@
 import { PersonOutlineOutlined, Search, ShoppingCartOutlined } from "@material-ui/icons";
 
-import { Center, Input, Left, Logo, MenuContainer, Navbar, Right, SearchContainer, Wrapper } from "./style";
+import { AccountContainer, ButtonSearch, CartContainer, Center, Input, Left, Logo, MenuContainer, Navbar, Right, SearchContainer, Wrapper } from "./style";
 
 export function Header(){
     return (
@@ -12,13 +12,19 @@ export function Header(){
                 <Center>
                     <SearchContainer>
                         <Input></Input>
-                        <Search></Search>
+                        <ButtonSearch>
+                            <Search></Search>
+                        </ButtonSearch>
                     </SearchContainer>
                 </Center>
                 <Right>
                     <MenuContainer>
-                        <ShoppingCartOutlined></ShoppingCartOutlined>
-                        <PersonOutlineOutlined></PersonOutlineOutlined>
+                        <CartContainer>
+                            <ShoppingCartOutlined></ShoppingCartOutlined>
+                        </CartContainer>
+                        <AccountContainer>
+                            <PersonOutlineOutlined></PersonOutlineOutlined>
+                        </AccountContainer>
                     </MenuContainer>
                 </Right>
             </Wrapper>

@@ -45,12 +45,24 @@ export const SearchContainer = styled.div`
     border: 0.5px solid lightgray;
     width: 100%;
     padding: 5px;
+    gap: 10px;
 `
 
 export const Input = styled.input`
     border: none;
     width: 100%;
     height: 30px;
+`;
+
+export const ButtonSearch = styled.div`
+    cursor: pointer;
+    display: flex;
+    width: 30px;
+    color: rgba(255,255,255,0.72);
+
+    &:hover{
+        color: rgba(255,255,255);
+    }
 `;
 
 export const Right = styled.div` 
@@ -63,4 +75,26 @@ export const MenuContainer = styled.div`
     display: flex;
     align-items: center;    
     gap: 15px;
+`;
+
+export const CartContainer = styled.div`
+    cursor: pointer;
+    display: flex;
+    width: 30px;
+    color: rgba(255,255,255,0.72);
+    
+    &:hover{
+        color: rgba(255,255,255);
+    }
+`;
+
+export const AccountContainer = styled.div`
+    cursor: pointer;
+    display: flex;
+    width: 30px;
+    color: rgba(255,255,255,0.72);
+
+    &:hover{
+        color: rgba(255,255,255);
+    }
 `;

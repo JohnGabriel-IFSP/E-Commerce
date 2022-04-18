@@ -1,24 +1,4 @@
-/* mobile first */
-/* breakpoint small */
 *{
     margin: 0;
     padding: 0;
-}
-
-body{
-    background-color: bisque;
-}
-
-/* breakpoint medium */
-@media(min-width: 60em){
-    body{
-        background-color: aquamarine;
-    }
-}
-
-/* breakpoint large */
-@media(min-width: 80em){
-    body{
-        background-color: brown;
-    }
 }
