@@ -40,7 +40,7 @@ export const Slide = styled.div<slideProps>`
 `;
 
 export const ImagemSlider = styled.img`
-    max-width: 100%;
+    width: 100%;
     position: absolute;
     object-fit: cover;
 `;
