@@ -1,6 +1,7 @@
 import { ArrowDropDown, Facebook, Instagram, Twitter } from "@material-ui/icons";
-import {Content, Container, Title, Wrapper, ShowContent } from "./style";
-import { Toggle } from "./Toggle";
+import {Content, Container, Title, Wrapper} from "./style";
+import { Toggle } from "./toggle/Toggle";
+
 
 export function Footer(){
     return(
@@ -9,21 +10,21 @@ export function Footer(){
             <Container>
                 <Content>
                     <Title>Formas de Pagamento</Title>
-                    <Toggle option={"payments"}></Toggle>
+                    <Toggle option={"payments"}/>
                 </Content>
             </Container>
 
             <Container>
                 <Content>
                     <Title>Midias Sociais</Title>
-                    <Toggle option={"social"}></Toggle>
+                    <Toggle option={"social"}/>
                 </Content>
             </Container>
 
             <Container>
                 <Content>
-                    <Title>Sobre</Title>
-                    <Toggle option="more"></Toggle>
+                    <Title>Saiba Mais</Title>
+                    <Toggle option="more"/>
                 </Content>
             </Container>
 

@@ -41,6 +41,7 @@ export const Slide = styled.div<slideProps>`
 
 export const ImagemSlider = styled.img`
     width: 100%;
+    height: 100%;
     position: absolute;
     object-fit: cover;
 `;
@@ -49,21 +50,29 @@ export const TitleSlider = styled.h2`
     width: 100%;
     height: 100%;
     color: white;
-    font-size: 50px;
+    font-size: 2rem;
     position: absolute;
     text-align: center;
     top: 40%;
     z-index: 10;
+
+    @media(min-width: 46em){
+        font-size: 4rem;
+    }
 `;
+
 export const DescriptionSlider = styled.h3`
     width: 100%;
     height: 100%;
     color: white;
-    font-size: 50px;
+    font-size: 2rem;
     position: absolute;
     text-align: center;
     top: 40%;
     z-index: 10;
     top: 65%;
-    font-size: 2rem;
+
+    @media(min-width: 46em){
+        font-size: 4rem;
+    }
 `;

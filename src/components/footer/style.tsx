@@ -6,8 +6,10 @@ export const Wrapper = styled.div`
     background-color: white;
     width: 100%;
     height: 15em;
-    color: white;
-    gap: 1px;
+
+    @media(min-width: 56em){
+        flex-direction: row;
+    }
 `;
 
 export const Title = styled.span`
@@ -31,18 +33,3 @@ export const Content = styled.div`
     align-items: center;
     color: white;
 `;
-
-export const ShowContent = styled.button`
-    cursor: pointer;
-    background-color: #121212;
-    color: rgba(255,255,255,0.72);
-    font-weight: bold;
-    font-size: 26px;
-    padding: 15px;
-    border: none;
-    
-    &:hover{
-        color: rgba(255,255,255);
-    }
-`;
-
