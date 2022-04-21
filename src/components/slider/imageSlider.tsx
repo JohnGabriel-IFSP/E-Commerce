@@ -1,4 +1,3 @@
-
 export default[
     {
         title: 'First Slider Image',

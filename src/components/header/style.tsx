@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Navbar = styled.div`
     position: fixed;
-    background-color: #121212;
-    color: white;
+    background-color:${({theme}) => theme.colors.primary};;
+    color: ${({theme}) => theme.colors.white};
     top: 0;
     left: 0;
     width: 100%;
@@ -58,10 +58,10 @@ export const ButtonSearch = styled.div`
     cursor: pointer;
     display: flex;
     width: 30px;
-    color: rgba(255,255,255,0.72);
+    color: ${({theme}) => theme.colors.secundary};
 
     &:hover{
-        color: rgba(255,255,255);
+        ${({theme}) => theme.colors.white};
     }
 `;
 
@@ -81,10 +81,10 @@ export const CartContainer = styled.div`
     cursor: pointer;
     display: flex;
     width: 30px;
-    color: rgba(255,255,255,0.72);
+    color: ${({theme}) => theme.colors.secundary};
     
     &:hover{
-        color: rgba(255,255,255);
+        color: ${({theme}) => theme.colors.white};
     }
 `;
 
@@ -92,9 +92,9 @@ export const AccountContainer = styled.div`
     cursor: pointer;
     display: flex;
     width: 30px;
-    color: rgba(255,255,255,0.72);
+    color: ${({theme}) => theme.colors.secundary};
 
     &:hover{
-        color: rgba(255,255,255);
+        color: ${({theme}) => theme.colors.white};
     }
 `;

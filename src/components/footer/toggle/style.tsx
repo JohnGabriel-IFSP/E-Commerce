@@ -6,7 +6,7 @@ interface toggleProps{
 
 export const Separator = styled.hr`
     width: 100%;
-    border-top: 1px solid white;
+    border-top: 1px solid ${({theme}) => theme.colors.tertiary};
     margin-left: 15px;
     margin-right: 15px;
 
@@ -19,30 +19,28 @@ export const ContentToggle = styled.div<toggleProps>`
     display: ${(props) => props.display};
     width: 100%;
     height: 130px;
-    background-color: #f0f8ff;
+    background-color: ${({theme}) => theme.colors.tertiary};
     margin-top: 10px;
 
     @media(min-width: 46em){
         display: flex;
     }
-    
 `;
 
 export const ShowContent = styled.button`
     cursor: pointer;
-    background-color: #121212;
-    color: rgba(255,255,255,0.72);
+    background-color: ${({theme}) => theme.colors.primary};
+    color: ${({theme}) => theme.colors.secundary};
     font-weight: bold;
     font-size: 26px;
     padding: 15px;
     border: none;
 
 &:hover{
-    color: rgba(255,255,255);
+    color: ${({theme}) => theme.colors.white};
 }
 
 @media(min-width: 46em){
     display: none;
 }
-
 `;

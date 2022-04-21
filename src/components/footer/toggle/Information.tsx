@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Sobre } from "../../../pages/Sobre";
+import { Logo } from "../../header/style";
 
 type socialProps = {
     display?:string;
@@ -8,19 +8,20 @@ type socialProps = {
 export const InfoContainer = styled.div<socialProps>`
     width: 100%;
     display: ${(props) => props.display};
-    color: black;
+    color: ${({theme}) => theme.colors.black};
 `;
 
 export const CardContainer = styled.div`
     width: 100%;
+    background-color: ${({theme}) => theme.colors.white};
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 10px;
-    margin: 15px;
-    padding: 10px;
+    margin: 0px 10px 10px 10px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     transition: 0.3s;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
 `;
 
 export const TextInfo = styled.span`
@@ -38,14 +39,7 @@ export function Information({display}:socialProps){
     return(
         <InfoContainer display={display}>
             <CardContainer>
-                <div>
-                    <TextInfo>Telefone: </TextInfo>
-                    <TextInfo>(xx)-xxxx-xxxx</TextInfo>
-                </div>
-                <div>
-                    <TextInfo>E-mail: </TextInfo>
-                    <LinkInfo href="mailto:urban.store@gmail.com">urban.store@gmail.com</LinkInfo>
-                </div>
+                <Logo>Urban Store</Logo>
                 <LinkInfo href="/sobre">Sobre nós</LinkInfo>
             </CardContainer>
         </InfoContainer>

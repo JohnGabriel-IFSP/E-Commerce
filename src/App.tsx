@@ -1,9 +1,13 @@
 import { AppRoutes } from './Routes';
+import {ThemeProvider} from 'styled-components';
+import theme from './assets/global/styles/theme';
 import './App.css'
 
 function App() {
     return (
-       <AppRoutes/>
+        <ThemeProvider theme={theme}>
+            <AppRoutes/>
+        </ThemeProvider>
     );
 }
 

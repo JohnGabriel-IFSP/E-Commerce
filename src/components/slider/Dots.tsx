@@ -44,7 +44,6 @@ export function Dots({current, onclick, imageSlider}:DotProps){
                     onClick={() => onclick(index)}
                     background = {current === index ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.3)"}
                 >
-                    
                 </Dot>
             ))}
         </Container>
