@@ -1,4 +1,5 @@
-import { Products } from "../components/content/products";
+
+import { Categories } from "../components/content/categories/Categories";
 import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/header/Header";
 import { Slider } from "../components/slider/Slider";
@@ -8,7 +9,7 @@ export function Home(){
         <div>
             <Header/>
             <Slider/>
-            <Products/>
+            <Categories/>
             <Footer/>
         </div>
     )

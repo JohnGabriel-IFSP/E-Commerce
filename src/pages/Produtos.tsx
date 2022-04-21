@@ -1,4 +1,9 @@
+import { Products } from "../components/content/products/Products";
 
 export function Produtos(){
-    return <h1>Produtos</h1>
+    return(
+        <>
+            <Products></Products>
+        </>
+    );
 }

@@ -3,11 +3,9 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    height: 15em;
-
+    
     @media(min-width: 56em){
         flex-direction: row;
-        height: 10em;
     }
 `;
 

@@ -49,7 +49,7 @@ export const ImagemSlider = styled.img`
 export const TitleSlider = styled.h2`
     width: 100%;
     height: 100%;
-    color: ${({theme}) => theme.colors.white};;
+    color: ${({theme}) => theme.colors.white};
     font-size: 2rem;
     position: absolute;
     text-align: center;
