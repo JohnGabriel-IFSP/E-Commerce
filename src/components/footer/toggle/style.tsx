@@ -7,8 +7,7 @@ interface toggleProps{
 export const Separator = styled.hr`
     width: 100%;
     border-top: 1px solid ${({theme}) => theme.colors.tertiary};
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 0px 15px 0px 15px;
 
     @media(min-width: 46em){
         display: none;

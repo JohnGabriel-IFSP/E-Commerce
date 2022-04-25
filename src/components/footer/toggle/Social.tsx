@@ -17,14 +17,10 @@ export const Image = styled.img`
 export const CardContainer = styled.div`
     width: 100%;
     background-color: ${({theme}) => theme.colors.white};
-    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0px 10px 10px 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-    transition: 0.3s;
-    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 5px;
 `;
 
 export const TextContainer = styled.span`
@@ -34,27 +30,28 @@ export const TextContainer = styled.span`
 
 export const SocialMidia = styled.a`
     cursor: pointer;
-    width: 100%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    margin: 15px;
 `;
 
 export function Social({display}:socialProps){
     return(
         <SocialContainer display={display}>
             <CardContainer>
-                <SocialMidia href="/">
+                <SocialMidia href="/1">
                     <Image src="src\assets\icons\social\facebook-48.png"/>
                     <TextContainer>Facebook</TextContainer>
                 </SocialMidia>
-                <SocialMidia href="/">
+                <SocialMidia href="/2">
                     <Image src="src\assets\icons\social\instagram-48.png"/>
                     <TextContainer>Instagram</TextContainer>
                 </SocialMidia>
-                <SocialMidia href="/">
+                <SocialMidia href="/3">
                     <Image src="src\assets\icons\social\twitter-48.png"/>
                     <TextContainer>Twitter</TextContainer>
                 </SocialMidia>

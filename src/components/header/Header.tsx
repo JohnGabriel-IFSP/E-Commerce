@@ -19,10 +19,10 @@ export function Header(){
                 </Center>
                 <Right>
                     <MenuContainer>
-                        <CartContainer>
+                        <CartContainer onClick={()=>{window.location.href = "/carrinho"}}>
                             <ShoppingCartOutlined></ShoppingCartOutlined>
                         </CartContainer>
-                        <AccountContainer>
+                        <AccountContainer onClick={()=>{window.location.href = "/login"}}>
                             <PersonOutlineOutlined></PersonOutlineOutlined>
                         </AccountContainer>
                     </MenuContainer>

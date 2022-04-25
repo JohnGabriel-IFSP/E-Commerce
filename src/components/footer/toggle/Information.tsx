@@ -18,10 +18,7 @@ export const CardContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 0px 10px 10px 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-    transition: 0.3s;
-    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 5px;
 `;
 
 export const TextInfo = styled.span`

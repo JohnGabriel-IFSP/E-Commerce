@@ -54,10 +54,12 @@ export const Input = styled.input`
     height: 30px;
 `;
 
-export const ButtonSearch = styled.div`
+export const ButtonSearch = styled.button`
     cursor: pointer;
     display: flex;
     width: 30px;
+    border: none;
+    background-color: ${({theme}) => theme.colors.primary};
     color: ${({theme}) => theme.colors.secundary};
 
     &:hover{
@@ -77,10 +79,12 @@ export const MenuContainer = styled.div`
     gap: 15px;
 `;
 
-export const CartContainer = styled.div`
+export const CartContainer = styled.button`
     cursor: pointer;
     display: flex;
     width: 30px;
+    border: none;
+    background-color: ${({theme}) => theme.colors.primary};
     color: ${({theme}) => theme.colors.secundary};
     
     &:hover{
@@ -88,10 +92,12 @@ export const CartContainer = styled.div`
     }
 `;
 
-export const AccountContainer = styled.div`
+export const AccountContainer = styled.button`
     cursor: pointer;
     display: flex;
     width: 30px;
+    border: none;
+    background-color: ${({theme}) => theme.colors.primary};
     color: ${({theme}) => theme.colors.secundary};
 
     &:hover{

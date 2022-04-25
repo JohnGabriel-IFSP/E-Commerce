@@ -13,6 +13,10 @@ export const Title = styled.span`
     font-size: 24px;
     font-weight: bold;
     margin-left: 15px;
+
+    @media(min-width: 46em){
+        font-size: 16px;
+    }
 `;
 
 export const Container = styled.div`
