@@ -1,67 +1,138 @@
 import styled from "styled-components"
 
 const Conteiner = styled.div`
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     width: 100vw;
     height: 100vh;
-    background-color: gray;
+    background: #34083f;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
 
+    @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+    }
 `;
 
-const Wrapper = styled.div`
-    width: 25%;
-    padding: 20px;
-    background-color: white;
+const Leftsideconteiner = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+    background-color: #881297;
+    box-shadow: 0px 10px 10px #000;
+    border-radius: 10px;
+
+    @media screen and (max-width: 600px) {
+        width: 80%;
+        height: 60%;
+        margin-top: 1rem;
+        padding: 0.5rem;
+    }
+`;
+
+const Rightsideconteiner = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    background-color: #881297;
+    box-shadow: 0px 10px 10px #000;
+    border-radius: 10px;
+
+    @media screen and (max-width: 600px) {
+        width: 80%;
+        height: auto;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
 `;
 
 const Tittle = styled.h1`
-    font-size: 24px;
-    font-weight: 300;
+    font-size: 35px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10%;
+
+    @media screen and (max-width: 600px) {
+        margin-bottom: 3%;
+        font-size: 25px;
+    }
 `;
 
 const Form = styled.form`
     display: flex;
     flex-direction: column;
+    width: 80%;
 `;
 
 const Input = styled.input`
     flex: 1;
+    border: none;
     min-width: 40%;
     margin: 10px 0px;
-    padding: 10px; 
-`;
-
-const Button = styled.button`
-    width: 40%;
-    border: none;
-    padding: 15px 20px;
-    margin-top: 10px;
-    background-color: lightgrey;
-    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
 `;
 
 const Link = styled.a`
-    font-size: 12px;
+    font-size: 15px;
     margin: 5px 0px;
     cursor: pointer;
     text-decoration: underline;
 `;
 
+const Button = styled.button`
+    width: 100%;
+    border: none;
+    padding: 15px 20px;
+    margin-top: 10px;
+    background-color: lightgrey;
+    cursor: pointer;
+    border-radius: 5px;
+`;
+
+const Termo = styled.span`
+    font-size: 12px;
+    margin: 20px 0px;
+`;
+
 export const Login = () => {
     return (
       <Conteiner>
-          <Wrapper>
-              <Tittle>LOGIN</Tittle>
-                  <Form>
-                      <Input placeholder = "Usuário" />
-                      <Input placeholder = "Senha" />
-                      <Link>Esqueceu sua senha?</Link>
-                      <Link>Crie uma nova conta</Link>
-                      <Button>Entrar</Button>
-                  </Form>
-          </Wrapper>
+          <Leftsideconteiner>
+              <Tittle>Login</Tittle>
+              <Form>
+                  <Input placeholder = "Usuário"/>
+                  <Input placeholder = "Senha"/>
+                  <Link>Esqueceu sua senha?</Link>
+                  <Button>Entrar</Button>
+              </Form>
+            </Leftsideconteiner>
+            <Rightsideconteiner>
+                <Tittle>É Novo por aqui? <br></br>Faça seu Cadastro</Tittle>
+                <Form>
+                    <Input placeholder = "Nome" />
+                    <Input placeholder = "Sobrenome" />
+                    <Input placeholder = "Nome de usuário" />
+                    <Input placeholder = "Email" />
+                    <Input placeholder = "Senha" />
+                    <Input placeholder = "Confirme a Senha" />
+                    <Termo>Ao finalizar meu cadastro certifico que tenho 
+                           mais de 18 anos de idade e aceito os Termos e 
+                           Condições e a <b>Política de Privacidade</b>
+                    </Termo>
+                    <Button>Criar</Button>
+                </Form>
+            </Rightsideconteiner>
       </Conteiner>
     )
   }
