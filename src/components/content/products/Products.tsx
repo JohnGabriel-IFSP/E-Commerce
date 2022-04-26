@@ -1,13 +1,11 @@
-import { Cards } from "./Cards";
 import productsContent from "./productsContent";
-import { CardsContainer, Container } from "./style"
+import { Cards } from "./Cards";
+import { Container } from "./style";
 
 export function Products(){
     return(
-        <Container>
-            <CardsContainer>
+            <Container>
                 <Cards productsContent={productsContent}/>
-            </CardsContainer>
-        </Container> 
+            </Container>
     );
 }
