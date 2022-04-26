@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Navbar = styled.div`
+export const Navbar = styled.header`
     position: fixed;
     background-color:${({theme}) => theme.colors.primary};;
     color: ${({theme}) => theme.colors.white};
