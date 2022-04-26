@@ -27,6 +27,11 @@ export const Left = styled.div`
     flex: 1
 `;
 
+export const LinkLogo = styled.a`
+    cursor: pointer;
+    text-decoration: none;
+`;
+
 export const Logo = styled.h1`
     font-family: 'Oswald', sans-serif;
 `;
