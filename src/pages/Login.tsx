@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import FacebookIcon from '@mui/icons-material/Facebook';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 
 const Conteiner = styled.div`
     margin: 0;
@@ -60,7 +62,7 @@ const Tittle = styled.h1`
     font-size: 35px;
     font-weight: 800;
     color: white;
-    margin-bottom: 10%;
+    justify-content: flex-start;
 
     @media screen and (max-width: 600px) {
         margin-bottom: 3%;
@@ -105,12 +107,18 @@ const Termo = styled.span`
     margin: 20px 0px;
 `;
 
+const Cinput = styled.div`
+`;
+
 export const Login = () => {
     return (
       <Conteiner>
           <Leftsideconteiner>
               <Tittle>Login</Tittle>
+              <FacebookOutlinedIcon fontSize="large"></FacebookOutlinedIcon>
               <Form>
+                  <Cinput>
+                  </Cinput>
                   <Input placeholder = "Usuário"/>
                   <Input placeholder = "Senha"/>
                   <Link>Esqueceu sua senha?</Link>
