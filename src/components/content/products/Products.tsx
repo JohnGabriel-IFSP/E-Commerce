@@ -3,10 +3,11 @@ import { Container } from "./style";
 import { Pagination } from "./Pagination/Pagination";
 import { useEffect, useState } from "react";
 import { SelectorPagination } from "./Pagination/SelectorPagination";
+import { OrderItens } from "./Pagination/OrderItens";
 
 export function Products(){
     const [itens, setItens] = useState([]);
-    const [itensPerPage, setItensPerPage] = useState(16);
+    const [itensPerPage, setItensPerPage] = useState(15);
     const [currentPage, setCurrentPage] = useState(0);
 
     const pages = Math.ceil(itens.length / itensPerPage)
@@ -29,11 +30,16 @@ export function Products(){
         setCurrentPage(0)
     }, [itensPerPage])
 
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    }, [currentPage])
+
     return(
             <Container>
-                <SelectorPagination itensPerPage={itensPerPage} setItensPerPage={setItensPerPage}></SelectorPagination>
+                <OrderItens></OrderItens>
                 <Cards productsContent={currentItens}/>
-                <Pagination pages={pages} setCurrentPage={setCurrentPage}></Pagination>
+                <SelectorPagination itensPerPage={itensPerPage} setItensPerPage={setItensPerPage}></SelectorPagination>
+                <Pagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage}></Pagination>
             </Container>
     );
 }
