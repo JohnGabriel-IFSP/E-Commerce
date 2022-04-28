@@ -16,10 +16,10 @@ export function SelectorPagination({itensPerPage,setItensPerPage}:any){
         <Container>
             <span>Itens por página</span>
             <select value={itensPerPage} onChange={(e) => setItensPerPage(Number((e.target as HTMLSelectElement).value))}>
-                <option value={16}>16</option>
-                <option value={24}>24</option>
-                <option value={32}>32</option>
-                <option value={40}>40</option>
+                <option value={15}>15</option>
+                <option value={30}>30</option>
+                <option value={45}>45</option>
+                <option value={60}>60</option>
             </select>
         </Container>
     )

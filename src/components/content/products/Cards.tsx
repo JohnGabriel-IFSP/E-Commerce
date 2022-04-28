@@ -7,6 +7,16 @@ export const CardContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
+    @media(min-width: 60em){
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    @media(min-width: 80em){
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
 `;
 
 export const Card = styled.div`

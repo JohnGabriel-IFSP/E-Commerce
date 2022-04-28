@@ -15,11 +15,13 @@ export const CardContainer = styled.div`
     }
 `;
 
-export const Card = styled.div`
+export const Card = styled.a`
     cursor: pointer;
     width: 100%;
     height: 250px;
     background-color: ${({theme}) => theme.colors.white};
+    color: ${({theme}) => theme.colors.white};
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +63,7 @@ export function Cards({categoriesContent}:categoriesProps){
     return(
         <CardContainer>
             {categoriesContent.map((card:any) => (
-                <Card>
+                <Card href="/produtos">
                     <Image src={card.images.main} alt="" />
                     <InfoCard>
                         <h3>{card.title}</h3>
