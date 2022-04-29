@@ -15,7 +15,7 @@ export function AppRoutes(){
     return(
         <Router>
             <Routes>
-                <Route path='/' element={<Home />} />
+                <Route path='/' element={<Home/>} />
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/cadastrar' element={<Cadastrar/>}/>
                 <Route path='/produtos' element={<Produtos/>}/>
