@@ -3,9 +3,9 @@ import styled from "styled-components"
 
 export const Conteiner = styled.div`
     box-sizing: border-box;
-    width: 100%;
+    width: 100vw;
     min-height: 720px;
-    background: #34083f;
+    background: ${({theme}) => theme.colors.secundary};
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -19,11 +19,11 @@ export const Conteiner = styled.div`
 export const Leftsideconteiner = styled.div`
     display: flex;
     flex-direction: column;
-    width: 45%;
-    height: 90%;
+    width: 30%;
+    height: 50vh;
     justify-content: center;
     align-items: center;
-    background-color: #881297;
+    background-color: ${({theme})=> theme.colors.primary};
     box-shadow: 0px 10px 10px #000;
     border-radius: 10px;
 
@@ -42,7 +42,7 @@ export const Rightsideconteiner = styled.div`
     height: 90%;
     justify-content: center;
     align-items: center;
-    background-color: #881297;
+    background-color: ${({theme}) => theme.colors.primary};
     box-shadow: 0px 10px 10px #000;
     border-radius: 10px;
 

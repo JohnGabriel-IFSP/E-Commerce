@@ -7,15 +7,15 @@ export const LoginComponent = () => {
       <Conteiner>
           <Leftsideconteiner>
               <Tittle>Login</Tittle>
-              <FacebookOutlinedIcon fontSize="large"></FacebookOutlinedIcon>
               <Form>
-                  <Cinput>
-                  </Cinput>
                   <Input placeholder = "Usuário"/>
                   <Input placeholder = "Senha" type="password"/>
                   <Link>Esqueceu sua senha?</Link>
                   <Button>Entrar</Button>
               </Form>
+              <Cinput>
+              <FacebookOutlinedIcon fontSize="large"></FacebookOutlinedIcon>
+              </Cinput>
             </Leftsideconteiner>
             <Rightsideconteiner>
                 <Tittle>É Novo por aqui? <br></br>Faça seu Cadastro</Tittle>
