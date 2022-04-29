@@ -1,6 +1,5 @@
-import { ArrowDropDown } from "@material-ui/icons";
+import { ArrowDropDown } from "@mui/icons-material";
 import { useState } from "react";
-import styled from "styled-components";
 import { Information } from "./Information";
 import { Payments } from "./Payments";
 import { Social } from "./Social";
