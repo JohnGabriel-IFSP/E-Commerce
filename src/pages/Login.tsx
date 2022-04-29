@@ -22,8 +22,8 @@ const Conteiner = styled.div`
 const Leftsideconteiner = styled.div`
     display: flex;
     flex-direction: column;
-    width: 40%;
-    height: 60%;
+    width: 45%;
+    height: 90%;
     justify-content: center;
     align-items: center;
     background-color: #881297;
@@ -41,8 +41,8 @@ const Leftsideconteiner = styled.div`
 const Rightsideconteiner = styled.div`
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 80%;
+    width: 45%;
+    height: 90%;
     justify-content: center;
     align-items: center;
     background-color: #881297;
@@ -94,9 +94,8 @@ const Link = styled.a`
 
 const Button = styled.button`
     width: 100%;
+    height: 35px;
     border: none;
-    padding: 15px 20px;
-    margin-top: 10px;
     background-color: lightgrey;
     cursor: pointer;
     border-radius: 5px;
