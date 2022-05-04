@@ -1,3 +1,4 @@
+import { Google, Twitter } from '@mui/icons-material';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import {Conteiner, Leftsideconteiner, Tittle, Form, Cinput, Input, Link, Button, Rightsideconteiner, Termo} from "./style";
 
@@ -15,6 +16,8 @@ export const LoginComponent = () => {
               </Form>
               <Cinput>
               <FacebookOutlinedIcon fontSize="large"></FacebookOutlinedIcon>
+              <Twitter fontSize='large' color= '#042630'></Twitter>
+              <Google fontSize='large'></Google>
               </Cinput>
             </Leftsideconteiner>
             <Rightsideconteiner>

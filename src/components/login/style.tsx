@@ -3,9 +3,9 @@ import styled from "styled-components"
 
 export const Conteiner = styled.div`
     box-sizing: border-box;
-    width: 100vw;
+    width: 100%;
     min-height: 720px;
-    background: ${({theme}) => theme.colors.secundary};
+    background: ${({theme}) => theme.colors.white};
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -23,8 +23,8 @@ export const Leftsideconteiner = styled.div`
     height: 50vh;
     justify-content: center;
     align-items: center;
-    background-color: ${({theme})=> theme.colors.primary};
-    box-shadow: 0px 10px 10px #000;
+    background-color: ${({theme})=> theme.colors.secundary};
+    box-shadow: 0px 10px 10px ${({theme})=> theme.colors.primary};
     border-radius: 10px;
 
     @media screen and (max-width: 600px) {
@@ -39,11 +39,11 @@ export const Rightsideconteiner = styled.div`
     display: flex;
     flex-direction: column;
     width: 45%;
-    height: 90%;
+    height: 600px;
     justify-content: center;
     align-items: center;
-    background-color: ${({theme}) => theme.colors.primary};
-    box-shadow: 0px 10px 10px #000;
+    background-color: ${({theme}) => theme.colors.secundary};
+    box-shadow: 0px 10px 10px ${({theme}) => theme.colors.primary};
     border-radius: 10px;
 
     @media screen and (max-width: 600px) {
@@ -58,7 +58,7 @@ export const Rightsideconteiner = styled.div`
 export const Tittle = styled.h1`
     font-size: 35px;
     font-weight: 800;
-    color: white;
+    color: ${({theme})=> theme.colors.primary};
     justify-content: flex-start;
 
     @media screen and (max-width: 600px) {
@@ -104,4 +104,9 @@ export const Termo = styled.span`
 `;
 
 export const Cinput = styled.div`
+    display: flex;
+    margin-top: 1rem;
+    width: 50%;
+    justify-content: space-between;
+    color: ${({theme})=> theme.colors.primary};
 `;
