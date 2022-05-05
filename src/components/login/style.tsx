@@ -9,10 +9,12 @@ export const Conteiner = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 3rem;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 650px) {
         display: flex;
         flex-direction: column;
+        margin-top: 8rem;
     }
 `;
 
@@ -27,7 +29,7 @@ export const Leftsideconteiner = styled.div`
     box-shadow: 0px 10px 10px ${({theme})=> theme.colors.primary};
     border-radius: 10px;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 650px) {
         width: 80%;
         height: 60%;
         margin-top: 1rem;
@@ -46,7 +48,7 @@ export const Rightsideconteiner = styled.div`
     box-shadow: 0px 10px 10px ${({theme}) => theme.colors.primary};
     border-radius: 10px;
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 650px) {
         width: 80%;
         height: auto;
         margin-top: 1rem;
@@ -105,6 +107,7 @@ export const Termo = styled.span`
 
 export const Cinput = styled.div`
     display: flex;
+    padding: 0;
     margin-top: 1rem;
     width: 50%;
     justify-content: space-between;

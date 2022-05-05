@@ -15,9 +15,9 @@ export const LoginComponent = () => {
                   <Button>Entrar</Button>
               </Form>
               <Cinput>
-              <FacebookOutlinedIcon fontSize="large"></FacebookOutlinedIcon>
-              <Twitter fontSize='large' color= '#042630'></Twitter>
-              <Google fontSize='large'></Google>
+              <FacebookOutlinedIcon fontSize="large" cursor='pointer'></FacebookOutlinedIcon>
+              <Twitter fontSize='large' cursor='pointer'></Twitter>
+              <Google fontSize='large'cursor='pointer'></Google>
               </Cinput>
             </Leftsideconteiner>
             <Rightsideconteiner>
