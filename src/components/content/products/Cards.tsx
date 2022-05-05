@@ -69,7 +69,9 @@ export function Cards({productsContent}:productsProps){
         <CardContainer>
             {productsContent.map((card:any) => (
                 <Card key={card._id}>
-                    <Image src={card.images.main} alt="" />
+                    {card.images.map((img:any) => (
+                        <Image key={img._id} src={img.main} alt="" />
+                    ))}
                     <InfoCard>
                         <span>{card.productName}</span>
                         <span>{card.price}</span>
