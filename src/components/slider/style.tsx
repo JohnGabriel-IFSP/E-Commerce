@@ -68,7 +68,6 @@ export const DescriptionSlider = styled.h3`
     font-size: 2rem;
     position: absolute;
     text-align: center;
-    top: 40%;
     z-index: 10;
     top: 65%;
 

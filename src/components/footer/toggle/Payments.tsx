@@ -17,7 +17,8 @@ export const ImageContainer = styled.div<paymentsProps>`
 export const CardContainer = styled.div`
     width: 100%;
     background-color: ${({theme}) => theme.colors.white};
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
