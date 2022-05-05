@@ -17,7 +17,7 @@ export function Products(){
 
     useEffect(()=>{
         const fetchData = async () => {
-            const Data = await fetch('src/components/content/products/productsContent.json')
+            const Data = await fetch('http://localhost:8080/Products')
                 .then(response => response.json())
                 .then(data => data)
 

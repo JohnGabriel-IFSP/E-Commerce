@@ -1,4 +1,4 @@
-import { PersonOutlineOutlined, Search, ShoppingCartOutlined } from "@material-ui/icons";
+import { PersonOutlineOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material';
 
 import { AccountContainer, ButtonSearch, CartContainer, Center, Input, Left, LinkLogo, Logo, MenuContainer, Navbar, Right, SearchContainer, Wrapper } from "./style";
 

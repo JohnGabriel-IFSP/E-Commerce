@@ -68,10 +68,10 @@ export function Cards({productsContent}:productsProps){
     return(
         <CardContainer>
             {productsContent.map((card:any) => (
-                <Card>
+                <Card key={card._id}>
                     <Image src={card.images.main} alt="" />
                     <InfoCard>
-                        <span>{card.title}</span>
+                        <span>{card.productName}</span>
                         <span>{card.price}</span>
                     </InfoCard>
                 </Card>

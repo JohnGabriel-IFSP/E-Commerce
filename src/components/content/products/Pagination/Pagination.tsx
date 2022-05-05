@@ -67,6 +67,7 @@ export function Pagination({ pages, currentPage, setCurrentPage }: any) {
         {Array.from(Array(pages), (item, index) => {
           return (
             <PageButton
+              key={currentPage}
               value={index}
               onClick={(e) =>
                 setCurrentPage(Number((e.target as HTMLButtonElement).value))

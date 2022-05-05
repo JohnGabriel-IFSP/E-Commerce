@@ -1,4 +1,3 @@
-import { ArrowDropDown, Facebook, Instagram, Twitter } from "@material-ui/icons";
 import {Content, Container, Title, Wrapper} from "./style";
 import { Toggle } from "./toggle/Toggle";
 
