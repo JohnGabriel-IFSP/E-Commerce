@@ -1,7 +1,8 @@
 import { Add, Remove } from "@mui/icons-material"
 import { ContentConteiner, LeftSide, RightSide, Title, InputCEP, Button, DivFrete, Div, Text, Bottom, 
     Product, ProductDetail, Image, Details, ProductName, ProductId, ProductColor, ProductSize, ProductPrice, Top,
-    ProductAmountConteiner, ProductAmount, Hr, ProductPriceDetail } from "./CartStyle"
+    ProductAmountConteiner, ProductAmount, Hr, ProductPriceDetail, SummaryTitle, SummaryItemText, SummaryItemPrice, 
+    SummaryItem, Last, ShippingOption, ShippingName, ShippingPrice, InputRadio, Form } from "./CartStyle"
 
 export const CartConteiner = () =>{
     return(
@@ -11,7 +12,6 @@ export const CartConteiner = () =>{
             </Title>
             <Top>
                 <LeftSide>
-                    <Text>Produto</Text>
                         <Product>
                             <ProductDetail>
                                 <Image src='https://cf.shopee.com.br/file/71ad80f1c46275424f2f84cbe421537c'/>
@@ -53,16 +53,57 @@ export const CartConteiner = () =>{
                     </Product>
                 </LeftSide>
                 <RightSide>
-                    summary
+                    <SummaryTitle>Resumo do Pedido</SummaryTitle>
+                    <SummaryItem>
+                        <SummaryItemText>Subtotal</SummaryItemText>
+                        <SummaryItemPrice>R$ 99,98</SummaryItemPrice>
+                    </SummaryItem>
+                    <SummaryItem>
+                        <SummaryItemText>Frete</SummaryItemText>
+                        <SummaryItemPrice>R$ 9,99</SummaryItemPrice>
+                    </SummaryItem>
+                    <SummaryItem>
+                        <SummaryItemText>Descontos</SummaryItemText>
+                        <SummaryItemPrice>-R$ 0,00</SummaryItemPrice>
+                    </SummaryItem>
+                    <Last>
+                        <SummaryItem  color ="total">
+                            <SummaryItemText>Total</SummaryItemText>
+                            <SummaryItemPrice>R$ 109,97</SummaryItemPrice>
+                        </SummaryItem>
+                        <Button>Finalizar Compra</Button>
+                    </Last>
+                    
                 </RightSide>
             </Top>
+            <Hr/>
             <Bottom>
                 <DivFrete>
-                    <Text>Calcula frete e prazo</Text>
-                    <Div> 
-                        <InputCEP placeholder='Insira seu CEP'></InputCEP>
-                        <Button>ok</Button>
+                    <Div>
+                        <Text>Calcula Frete e Prazo</Text>
+                        <Div color="div1"> 
+                            <InputCEP placeholder='Insira seu CEP'></InputCEP>
+                            <Button color = "ok">Buscar</Button>
+                        </Div>
                     </Div>
+                    <Div>
+                        <Form>
+                            <ShippingOption>
+                                <Div>
+                                    <InputRadio type="radio" id="sedex"></InputRadio>
+                                    <ShippingName>Sedex</ShippingName>
+                                </Div>
+                                <ShippingPrice>R$ 9,99</ShippingPrice>        
+                            </ShippingOption>
+                            <ShippingOption>
+                                <Div>
+                                    <InputRadio type="radio" id="PAC"></InputRadio>
+                                    <ShippingName>PAC</ShippingName>
+                                </Div>
+                                <ShippingPrice>R$ 5,99</ShippingPrice>         
+                            </ShippingOption>
+                        </Form>
+                    </Div>    
                 </DivFrete>
             </Bottom>
         </ContentConteiner>
