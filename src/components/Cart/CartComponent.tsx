@@ -4,6 +4,8 @@ import { ContentConteiner, LeftSide, RightSide, Title, InputCEP, Button, DivFret
     ProductAmountConteiner, ProductAmount, Hr, ProductPriceDetail, SummaryTitle, SummaryItemText, SummaryItemPrice, 
     SummaryItem, Last, ShippingOption, ShippingName, ShippingPrice, InputRadio, Form } from "./CartStyle"
 
+import conteudoCarrinho from "./conteudoCarrinho"
+
 export const CartConteiner = () =>{
     return(
         <ContentConteiner>
@@ -12,45 +14,27 @@ export const CartConteiner = () =>{
             </Title>
             <Top>
                 <LeftSide>
+                    {conteudoCarrinho.map((item:any) => (
                         <Product>
                             <ProductDetail>
                                 <Image src='https://cf.shopee.com.br/file/71ad80f1c46275424f2f84cbe421537c'/>
                                 <Details>
                                     <ProductName><b>Produto:</b> Camisa Masculina</ProductName>
-                                    <ProductId><b>ID:</b> 010101</ProductId>
-                                    <ProductColor color='black'/>
-                                    <ProductSize><b>Tamanho: </b> M</ProductSize>
+                                    <ProductId><b>ID:</b>{item.id_produto}</ProductId>
+                                    <ProductColor color={item.cor}/>
+                                    <ProductSize><b>Tamanho: </b>{item.tamanho}</ProductSize>
                                 </Details>
                             </ProductDetail>
                         <ProductPrice>
                             <ProductAmountConteiner>
                                 <Add cursor='pointer'/>
-                                <ProductAmount>2</ProductAmount>
+                                <ProductAmount>{item.quantidade}</ProductAmount>
                                 <Remove cursor='pointer'/>
                             </ProductAmountConteiner>
                             <ProductPriceDetail>R$ 49,99</ProductPriceDetail>
                         </ProductPrice>
                     </Product>
-                    <Hr/>
-                    <Product>
-                            <ProductDetail>
-                                <Image src='https://cf.shopee.com.br/file/71ad80f1c46275424f2f84cbe421537c'/>
-                                <Details>
-                                    <ProductName><b>Produto:</b> Camisa Masculina</ProductName>
-                                    <ProductId><b>ID:</b> 010101</ProductId>
-                                    <ProductColor color='black'/>
-                                    <ProductSize><b>Tamanho: </b> M</ProductSize>
-                                </Details>
-                            </ProductDetail>
-                        <ProductPrice>
-                            <ProductAmountConteiner>
-                                <Add cursor='pointer'/>
-                                <ProductAmount>2</ProductAmount>
-                                <Remove cursor='pointer'/>
-                            </ProductAmountConteiner>
-                            <ProductPriceDetail>R$ 49,99</ProductPriceDetail>
-                        </ProductPrice>
-                    </Product>
+                    ))}
                 </LeftSide>
                 <RightSide>
                     <SummaryTitle>Resumo do Pedido</SummaryTitle>

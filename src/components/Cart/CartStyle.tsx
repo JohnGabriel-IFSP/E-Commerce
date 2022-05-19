@@ -84,6 +84,7 @@ export const Text = styled.h1`
 export const Product = styled.div`
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
 
     @media screen and (max-width: 594px) {
         flex-direction: column;
