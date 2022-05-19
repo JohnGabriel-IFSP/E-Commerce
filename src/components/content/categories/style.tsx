@@ -5,7 +5,6 @@ export const Container = styled.div`
     height: 50em;
     display: flex;
     justify-content: center;
-    color: ${({theme}) => theme.colors.white};
     font-weight: bold;
 `;
 

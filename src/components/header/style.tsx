@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Navbar = styled.div`
+export const Navbar = styled.header`
     position: fixed;
     background-color:${({theme}) => theme.colors.primary};;
     color: ${({theme}) => theme.colors.white};
@@ -25,6 +25,11 @@ export const Wrapper = styled.div`
 
 export const Left = styled.div` 
     flex: 1
+`;
+
+export const LinkLogo = styled.a`
+    cursor: pointer;
+    text-decoration: none;
 `;
 
 export const Logo = styled.h1`

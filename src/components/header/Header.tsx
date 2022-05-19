@@ -1,14 +1,15 @@
-//import { PersonOutlineOutlined, Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { PersonOutlineOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material';
 
-import { AccountContainer, ButtonSearch, CartContainer, Center, Input, Left, Logo, MenuContainer, Navbar, Right, SearchContainer, Wrapper } from "./style";
+import { AccountContainer, ButtonSearch, CartContainer, Center, Input, Left, LinkLogo, Logo, MenuContainer, Navbar, Right, SearchContainer, Wrapper } from "./style";
 
 export function Header(){
     return (
         <Navbar>
             <Wrapper>
                 <Left>
-                    <Logo>Urban Store</Logo>
+                    <LinkLogo onClick={()=>{window.location.href = "/"}}>
+                        <Logo>Urban Store</Logo>
+                    </LinkLogo>
                 </Left>
                 <Center>
                     <SearchContainer>
