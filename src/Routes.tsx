@@ -3,7 +3,8 @@ import {
     Routes,
     Route,
 } from 'react-router-dom'
-import App from './App'
+import { Admin } from './pages/Admin'
+import { AdminPanel } from './pages/AdminPanel'
 import { Cadastrar } from './pages/Cadastrar'
 import { Carrinho } from './pages/Carrinho'
 import { Home } from './pages/Home'
@@ -20,6 +21,8 @@ export function AppRoutes(){
                 <Route path='/cadastrar' element={<Cadastrar/>}/>
                 <Route path='/produtos' element={<Produtos/>}/>
                 <Route path='/carrinho' element={<Carrinho/>}/>
+                <Route path='/admin' element={<Admin/>}/>
+                <Route path='/panel' element={<AdminPanel/>}/>
                 <Route path='/sobre' element={<Sobre/>}/>
             </Routes>
         </Router>
