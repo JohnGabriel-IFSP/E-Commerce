@@ -2,36 +2,35 @@ import styled from "styled-components"
 
 
 export const Container = styled.div`
-    box-sizing: border-box;
     width: 100%;
-    min-height: 70vh;
+    min-height: 80vh;
+    box-sizing: border-box;
     background: ${({theme}) => theme.colors.white};
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    margin-top: 3rem;
+    margin: 120px 0px 0px 0px;
 
-    @media screen and (max-width: 650px) {
-        display: flex;
-        flex-direction: column;
-        margin-top: 8rem;
+    @media(min-width: 46em){
+        margin: 80px 0px 0px 0px;
     }
 `;
 
-export const FormContainer = styled.div`
-    display: flex;
-    flex-direction: column;
+type displayProp ={
+    display : string;
+}
+export const FormContainer = styled.div<displayProp>`
     width: 70%;
     min-height: 50vh;
+    display: ${(props) => props.display};
+    flex-direction: column;
     background-color: ${({theme})=> theme.colors.secundary};
     box-shadow: 5px 5px 15px ${({theme})=> theme.colors.primary};
     border-radius: 10px;
-    margin: 25px;
-
-    @media screen and (max-width: 650px) {
+    margin: 3rem;
+    
+    @media(min-width: 46em){
         width: 80%;
-        height: 60%;
-        margin-top: 1rem;
         padding: 0.5rem;
     }
 `;
@@ -75,10 +74,33 @@ export const Button = styled.button`
     border: none;
     background-color: lightgrey;
     border-radius: 5px;
-    margin-top: 25px;
+    margin-top: 10px;
 
     &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.white};
+  }
+`;
+
+export const OptionContainer = styled.div`
+    width: 100%;
+    height: 60px;
+    display: flex;
+    gap: 15px;
+    padding: 25px;
+    background-color: ${({ theme }) => theme.colors.secundary};
+
+    @media screen and (max-width: 650px) {
+        margin: 0px;
+        padding-left: 55px ;
+    }
+`;
+
+export const LinkOption = styled.a`
+    cursor: pointer;
+    color: ${({ theme }) => theme.colors.white};
+
+    &:hover {
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
