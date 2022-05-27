@@ -6,14 +6,13 @@ import { Container } from "./style";
 import { UpdateProduct } from "./UpdateProduto";
 
 export function Panel(){
-    const [current, setCurrent] = useState(true);
-    const [index, setIndex] = useState(1);
+    const [current, setCurrent] = useState(1);
     return(
         <Container>
-            <OptionBar setCurrent={(current:any) => {setCurrent(true), setIndex(current)}}></OptionBar>
-            <CreateProduct current={index === 1 ? current : false}></CreateProduct>
-            <UpdateProduct current={index === 2 ? current : false}></UpdateProduct>
-            <SearchOrder current={index === 3 ? current : false}></SearchOrder>
+            <OptionBar setCurrent={(current:any) => {setCurrent(current)}}></OptionBar>
+            <CreateProduct current={current === 1 ? true : false}></CreateProduct>
+            <UpdateProduct current={current === 2 ? true : false}></UpdateProduct>
+            <SearchOrder current={current === 3 ? true : false}></SearchOrder>
         </Container>
     );
 }

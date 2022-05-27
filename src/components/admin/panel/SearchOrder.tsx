@@ -1,7 +1,6 @@
 import { Button, ButtonContainer, Form, FormContainer, Input, Title } from "./style";
-export function SearchOrder({current}:any){
-    
 
+export function SearchOrder({current}:any){
     return(
             <FormContainer display={current ? 'flex' : 'none'}>
                 <Form>
