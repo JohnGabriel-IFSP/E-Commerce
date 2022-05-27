@@ -87,11 +87,6 @@ export const OptionContainer = styled.div`
     padding: 25px;
     background-color: ${({ theme }) => theme.colors.secundary};
     box-shadow: 5px 5px 15px ${({theme})=> theme.colors.primary};
-
-    @media screen and (max-width: 650px) {
-        margin: 0px;
-        padding-left: 55px ;
-    }
 `;
 
 export const LinkOption = styled.a`
