@@ -3,16 +3,15 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     width: 100%;
-    min-height: 80vh;
     box-sizing: border-box;
     background: ${({theme}) => theme.colors.white};
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 120px 0px 0px 0px;
+    margin-top: 120px;
 
     @media(min-width: 46em){
-        margin: 80px 0px 0px 0px;
+        margin-top: 80px;
     }
 `;
 
@@ -20,17 +19,15 @@ type displayProp ={
     display : string;
 }
 export const FormContainer = styled.div<displayProp>`
-    width: 70%;
-    min-height: 50vh;
+    width: 98%;
+    min-height: 55vh;
     display: ${(props) => props.display};
     flex-direction: column;
     background-color: ${({theme})=> theme.colors.secundary};
-    box-shadow: 5px 5px 15px ${({theme})=> theme.colors.primary};
     border-radius: 10px;
-    margin: 3rem;
+    margin: 1rem;
     
     @media(min-width: 46em){
-        width: 80%;
         padding: 0.5rem;
     }
 `;
@@ -72,13 +69,13 @@ export const Button = styled.button`
     width: 30%;
     height: 35px;
     border: none;
-    background-color: lightgrey;
+    background-color: ${({ theme }) => theme.colors.tertiary};
+    color: ${({ theme }) => theme.colors.white};
     border-radius: 5px;
     margin-top: 10px;
 
     &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.white};
   }
 `;
 
@@ -89,6 +86,7 @@ export const OptionContainer = styled.div`
     gap: 15px;
     padding: 25px;
     background-color: ${({ theme }) => theme.colors.secundary};
+    box-shadow: 5px 5px 15px ${({theme})=> theme.colors.primary};
 
     @media screen and (max-width: 650px) {
         margin: 0px;
