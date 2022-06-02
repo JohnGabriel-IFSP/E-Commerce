@@ -9,6 +9,7 @@ export function UpdateProduct({current}:any){
                         <Input placeholder = "Buscar Nome Produto"></Input>
                         <Button>Buscar</Button>
                     </ButtonContainer>
+                    <Input placeholder = "Código do Produto"></Input>
                     <Input placeholder = "Nome Produto"></Input>
                     <Input placeholder = "Tamanho"></Input>
                     <Input placeholder = "Quantidade"></Input>

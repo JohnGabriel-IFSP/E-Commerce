@@ -23,7 +23,6 @@ export const FormContainer = styled.div`
     flex-direction: column;
     width: 30%;
     height: 50vh;
-    justify-content: center;
     align-items: center;
     background-color: ${({theme})=> theme.colors.secundary};
     box-shadow: 5px 5px 15px ${({theme})=> theme.colors.primary};
@@ -37,8 +36,16 @@ export const FormContainer = styled.div`
     }
 `;
 
-export const Title = styled.h1`
+export const Logo = styled.h1`
+    font-family: 'Oswald', sans-serif;
     font-size: 35px;
+    margin: 30px 40px;
+    color: ${({theme})=> theme.colors.white};
+    text-shadow: 1px 1px 2px black;
+`;
+
+export const Title = styled.h1`
+    font-size: 25px;
     font-weight: 800;
     color: ${({theme})=> theme.colors.primary};
     justify-content: flex-start;
@@ -59,21 +66,22 @@ export const Input = styled.input`
     flex: 1;
     border: none;
     min-width: 40%;
-    margin: 10px 0px;
+    margin-top: 5px;
     padding: 10px;
     border-radius: 5px;
 `;
 
 export const Button = styled.button`
+    cursor: pointer;
     width: 100%;
     height: 35px;
     border: none;
-    background-color: lightgrey;
-    cursor: pointer;
     border-radius: 5px;
+    margin-top: 10px;
+    background-color: ${({theme})=> theme.colors.tertiary};
+    color: ${({ theme }) => theme.colors.white};
 
     &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.white};
   }
 `;

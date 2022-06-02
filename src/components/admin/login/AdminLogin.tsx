@@ -1,9 +1,10 @@
-import { Button, Container, Form, FormContainer, Input, Title } from "./style";
+import { Button, Container, Form, FormContainer, Input, Logo, Title } from "./style";
 
 export function AdminLogin(){
     return(
         <Container>
             <FormContainer>
+                <Logo>Urban Store</Logo>
                 <Title>Login Admin</Title>
                 <Form>
                     <Input placeholder = "Usuário"/>

@@ -1,4 +1,4 @@
-import { Button, ButtonContainer, Form, FormContainer, Input, Title } from "./style";
+import { Button, ButtonContainer, Form, FormContainer, InfoContainer, Input, Title } from "./style";
 
 export function CreateProduct({current}:any){
     
@@ -8,10 +8,14 @@ export function CreateProduct({current}:any){
                 <Form>
                     <Title>Cadastrar Produto</Title>
                     <Input placeholder = "Nome Produto"></Input>
-                    <Input placeholder = "Tamanho"></Input>
-                    <Input placeholder = "Quantidade"></Input>
-                    <Input placeholder = "Cor"></Input>
                     <Input placeholder = "Categoria"></Input>
+                    <InfoContainer>
+                        <Input placeholder = "Tamanho"></Input>
+                        <Input placeholder = "Quantidade"></Input>
+                        <Input placeholder = "Cor"></Input>
+                        <Input placeholder = "Preço"></Input>
+                    </InfoContainer>
+                    <Input placeholder = "Imagem"></Input>
                     <ButtonContainer>
                         <Button>Enviar</Button>
                     </ButtonContainer>
