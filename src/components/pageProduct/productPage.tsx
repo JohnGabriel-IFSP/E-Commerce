@@ -1,6 +1,7 @@
+import { Add, Remove } from "@mui/icons-material"
 import { Conteiner, ImgConteiner, Image, InfoConteiner, Title, Sobre, Price, 
     FilterConteiner,Filter, FilterTitle, FilterColor, FilterSize, FilterSizeOption,
-} from "./productStyle"
+    AddConteiner, Amount, AmountConteiner, Button} from "./productStyle"
 
 export const ProductPageConteiner = () => {
   return (
@@ -35,6 +36,14 @@ export const ProductPageConteiner = () => {
                     </FilterSize>
                 </Filter>
             </FilterConteiner>
+            <AddConteiner>
+                <AmountConteiner>
+                    <Remove/>
+                    <Amount>1</Amount>
+                    <Add/>
+                </AmountConteiner>
+                <Button>Enviar para o Carrinho</Button>
+            </AddConteiner>
         </InfoConteiner>
     </Conteiner>
   )
