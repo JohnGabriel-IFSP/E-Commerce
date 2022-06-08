@@ -1,4 +1,4 @@
-import { Button, ButtonContainer, Form, FormContainer, Input, Title } from "./style";
+import { Button, ButtonContainer, Form, FormContainer, InfoContainer, Input, Title } from "./style";
 
 export function UpdateProduct({current}:any){
     return(
@@ -11,10 +11,15 @@ export function UpdateProduct({current}:any){
                     </ButtonContainer>
                     <Input placeholder = "Código do Produto"></Input>
                     <Input placeholder = "Nome Produto"></Input>
-                    <Input placeholder = "Tamanho"></Input>
-                    <Input placeholder = "Quantidade"></Input>
-                    <Input placeholder = "Cor"></Input>
                     <Input placeholder = "Categoria"></Input>
+                    <InfoContainer>
+                        <Input placeholder = "Tamanho"></Input>
+                        <Input placeholder = "Quantidade"></Input>
+                        <Input placeholder = "Cor"></Input>
+                        <Input placeholder = "Preço"></Input>
+                    </InfoContainer>
+                    <Input placeholder = "Descrição"></Input>
+                    <Input placeholder = "Imagem"></Input>
                 </Form>
             </FormContainer>
     );

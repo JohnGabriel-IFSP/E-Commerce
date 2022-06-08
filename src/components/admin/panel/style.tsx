@@ -16,7 +16,7 @@ export const FormContainer = styled.div<displayProp>`
     width: 95%;
     display: ${(props) => props.display};
     flex-direction: column;
-    background-color: ${({theme})=> theme.colors.secundary};
+    background-color: ${({theme})=> theme.colors.white};
     border-radius: 10px;
     margin: 1rem;
     box-shadow: 5px 5px 15px ${({theme})=> theme.colors.primary};
@@ -63,11 +63,27 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-    border: none;
     width: 100%;
     margin-top: 10px;
     padding: 10px;
+    border: 2px solid ${({ theme }) => theme.colors.secundary};
     border-radius: 5px;
+    background-color: ${({ theme }) => theme.colors.white};
+
+    &:focus{
+        border-color: ${({ theme }) => theme.colors.primary};
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label{
+        top: 0;
+        left: 6px;
+        background-color: ${({ theme }) => theme.colors.white};
+
+        @media(min-width: 46em){
+        left: 10px;
+        }
+    }
 `;
 
 export const ButtonContainer = styled.div`
@@ -150,4 +166,60 @@ export const InfoContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     gap: 10px;
+`;
+
+export const Fields = styled.div`
+    position: relative;
+    margin: 5px;
+`;
+
+export const Label = styled.label`
+    position: absolute;
+    pointer-events: none;
+    font-size: 13px;
+    top: 22px;
+    left: 7px;
+    transition: top 250ms, left 250ms;
+
+    @media(min-width: 46em){
+      font-size: 15px;
+    }
+`;
+
+export const ContainerImages = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    border: 2px solid ${({ theme }) => theme.colors.secundary};
+    border-radius: 5px;
+`;
+
+type propImage ={
+    image: string;
+}
+export const BoxImage = styled.span<propImage>`
+    cursor: pointer;
+    user-select: none;
+    width: 150px;
+    min-height: 150px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px dotted ${({ theme }) => theme.colors.secundary};
+    border-radius: 5px;
+    background-image: url(${(props) => props.image}); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+
+`;
+
+export const InputImage = styled.input`
+    display: none;
 `;
