@@ -61,6 +61,8 @@ export const Button = styled.button`
     border: none;
     cursor: pointer;
 
+    
+
 `;
 
 export const DivFrete = styled.div`

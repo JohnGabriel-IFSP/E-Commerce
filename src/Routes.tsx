@@ -9,6 +9,7 @@ import { Carrinho } from './pages/Carrinho'
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
 import { Produtos } from './pages/Produtos'
+import { ProdutoUnico } from './pages/ProdutoUnico'
 import { Sobre } from './pages/Sobre'
 
 export function AppRoutes(){
@@ -21,6 +22,7 @@ export function AppRoutes(){
                 <Route path='/produtos' element={<Produtos/>}/>
                 <Route path='/carrinho' element={<Carrinho/>}/>
                 <Route path='/sobre' element={<Sobre/>}/>
+                <Route path='/pageproduto' element={<ProdutoUnico/>}/>
             </Routes>
         </Router>
     )

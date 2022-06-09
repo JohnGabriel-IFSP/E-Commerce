@@ -31,7 +31,7 @@ export const CartConteiner = () =>{
                                 <ProductAmount>{item.quantidade}</ProductAmount>
                                 <Remove cursor='pointer'/>
                             </ProductAmountConteiner>
-                            <ProductPriceDetail>R$ 49,99</ProductPriceDetail>
+                            <ProductPriceDetail>{item.preco}</ProductPriceDetail>
                         </ProductPrice>
                     </Product>
                     ))}
