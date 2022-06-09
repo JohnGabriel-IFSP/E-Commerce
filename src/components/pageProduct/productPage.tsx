@@ -1,13 +1,21 @@
 import { Add, Remove } from "@mui/icons-material"
 import { Conteiner, ImgConteiner, Image, InfoConteiner, Title, Sobre, Price, 
     FilterConteiner,Filter, FilterTitle, FilterColor, FilterSize, FilterSizeOption,
-    AddConteiner, Amount, AmountConteiner, Button} from "./productStyle"
+    AddConteiner, Amount, AmountConteiner, Button, PriorityImg, SelectImg, ImageSecondary   } from "./productStyle"
 
 export const ProductPageConteiner = () => {
   return (
     <Conteiner>
         <ImgConteiner>
-            <Image src="https://i.shafacdn.net/images/230897-65-auto-auto-cGO1rqBvW0s.jpg"></Image>
+            <PriorityImg>
+                <Image src="https://i.shafacdn.net/images/230897-65-auto-auto-cGO1rqBvW0s.jpg"></Image>
+            </PriorityImg>
+            <SelectImg>
+                <ImageSecondary src="https://i.shafacdn.net/images/230897-65-auto-auto-cGO1rqBvW0s.jpg"></ImageSecondary>
+                <ImageSecondary src="https://i.shafacdn.net/images/230897-65-auto-auto-cGO1rqBvW0s.jpg"></ImageSecondary>
+                <ImageSecondary src="https://i.shafacdn.net/images/230897-65-auto-auto-cGO1rqBvW0s.jpg"></ImageSecondary>
+                <ImageSecondary src="https://i.shafacdn.net/images/230897-65-auto-auto-cGO1rqBvW0s.jpg"></ImageSecondary>
+            </SelectImg>
         </ImgConteiner>
         <InfoConteiner>
             <Title>Item</Title>
