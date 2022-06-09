@@ -63,7 +63,7 @@ export function Cards({categoriesContent}:categoriesProps){
     return(
         <CardContainer>
             {categoriesContent.map((card:any) => (
-                <Card href="/produtos">
+                <Card key={card._id} href="/produtos">
                     <Image src={card.images.main} alt="" />
                     <InfoCard>
                         <h3>{card.title}</h3>

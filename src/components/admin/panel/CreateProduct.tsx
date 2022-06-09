@@ -1,37 +1,50 @@
 import { Button, ButtonContainer, Form, FormContainer, InfoContainer, Input, Title, Fields, Label, ContainerImages, BoxImage, InputImage } from "./style";
 import { useForm } from 'react-hook-form';
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export function CreateProduct({current}:any){
+    
+    const formData = new FormData()
+    
     const refImage1 = useRef(null);
     const refImage2 = useRef(null);
     const refImage3 = useRef(null);
     const refImage4 = useRef(null);
 
-    const [url, setUrl] = useState(""); 
-
-    const handleUpload = () =>{
-        const preview = URL.createObjectURL(refImage1.current?.files[0])
-        setUrl(preview)
-    }
+    const [image1, setImage1] = useState("");
+    const [image2, setImage2] = useState(""); 
+    const [image3, setImage3] = useState("");
+    const [image4, setImage4] = useState("");
     
-    // const handleInputAction = () =>{
-    //     refImage1.current?.click();
-    // }
-
     const { register, handleSubmit } = useForm();
 
-    const postProduct = (data: RequestInit | undefined) => 
+    const Post = (formData:any) =>{
         fetch('http://localhost:8080/CadastrarProduto', 
-                {method: "POST", 
-                headers:{"Content-Type" : 'application/json'}, 
-                body:JSON.stringify(data)})
+                {method: "POST",
+                body:formData})
             .then(() =>{
                 console.log("Inserido com sucesso!");
             })
             .catch(() =>{
                 console.log("Falha ao inserir!");
             });
+    }
+
+    const postProduct = (data: any) =>{
+        formData.append('imageOne', refImage1.current?.files[0]);
+        formData.append('imageTwo', refImage2.current?.files[0]);
+        formData.append('imageThree', refImage3.current?.files[0]);
+        formData.append('imageFour', refImage4.current?.files[0]);
+        formData.append('productName', data.productName)
+        formData.append('category', data.category)
+        formData.append('size', data.size)
+        formData.append('inventory', data.inventory)
+        formData.append('color', data.color)
+        formData.append('price', data.price)
+        formData.append('description', data.description)
+
+        Post(formData)
+    }
 
     return(
             <FormContainer display={current ? 'flex' : 'none'}>
@@ -69,20 +82,20 @@ export function CreateProduct({current}:any){
                     </Fields>
                     <ContainerImages>
                         <div>
-                            <BoxImage image={url} onClick={()=>{refImage1.current?.click()}}> Click para adicionar uma imagem</BoxImage>
-                            <InputImage accept="image/*" type="file" ref={refImage1} id="image" onChange={handleUpload}/>
+                            <BoxImage image={image1} onClick={()=>{refImage1.current?.click()}}> Click para adicionar uma imagem</BoxImage>
+                            <InputImage accept="image/*" type="file" ref={refImage1} id="image" onChange={()=>setImage1(URL.createObjectURL(refImage1.current?.files[0]))}/>
                         </div>
                         <div>
-                            <BoxImage image={url} onClick={()=>{refImage2.current?.click()}}> Click para adicionar uma imagem</BoxImage>
-                            <InputImage accept="image/*" type="file" ref={refImage2} id="image" onChange={handleUpload}/>
+                            <BoxImage image={image2} onClick={()=>{refImage2.current?.click()}}> Click para adicionar uma imagem</BoxImage>
+                            <InputImage accept="image/*" type="file" ref={refImage2} id="image" onChange={()=>setImage2(URL.createObjectURL(refImage2.current?.files[0]))}/>
                         </div>
                         <div>
-                            <BoxImage image={url} onClick={()=>{refImage3.current?.click()}}> Click para adicionar uma imagem</BoxImage>
-                            <InputImage accept="image/*" type="file" ref={refImage3} id="image" onChange={handleUpload}/>
+                            <BoxImage image={image3} onClick={()=>{refImage3.current?.click()}}> Click para adicionar uma imagem</BoxImage>
+                            <InputImage accept="image/*" type="file" ref={refImage3} id="image" onChange={()=>setImage3(URL.createObjectURL(refImage3.current?.files[0]))}/>
                         </div>
                         <div>
-                            <BoxImage image={url} onClick={()=>{refImage4.current?.click()}}> Click para adicionar uma imagem</BoxImage>
-                            <InputImage accept="image/*" type="file" ref={refImage4} id="image" onChange={handleUpload}/>
+                            <BoxImage image={image4} onClick={()=>{refImage4.current?.click()}}> Click para adicionar uma imagem</BoxImage>
+                            <InputImage accept="image/*" type="file" ref={refImage4} id="image" onChange={()=>setImage4(URL.createObjectURL(refImage4.current?.files[0]))}/>
                         </div>
                     </ContainerImages>
                     <ButtonContainer>
