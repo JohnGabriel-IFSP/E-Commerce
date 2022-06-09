@@ -55,11 +55,15 @@ export const Button = styled.button`
     width: 100%;
     width: ${(props)=>props.color === "ok" && "30%"};
     padding: 10px;
-    background-color: ${({theme}) => theme.colors.secundary};
-    color: ${({theme})=> theme.colors.white};
+    background-color: ${({theme}) => theme.colors.white};
+    color: ${({theme})=> theme.colors.black};
     font-weight: 600px;
-    border: none;
+    border: 1px solid teal;
     cursor: pointer;
+
+    &:hover{
+        background-color: ${({theme})=> theme.colors.tertiary};
+    }
 
     
 
@@ -122,6 +126,10 @@ export const ProductColor = styled.div`
     height: 20px;
     border-radius: 50%;
     background-color: ${(props) => props.color};
+
+    &:hover{
+        border: 2px solid teal;
+    }
 `;
 
 export const ProductSize = styled.span`
