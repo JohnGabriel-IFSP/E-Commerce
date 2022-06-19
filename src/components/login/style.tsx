@@ -118,7 +118,3 @@ export const Cinput = styled.div`
     justify-content: space-between;
     color: ${({theme})=> theme.colors.primary};
 `;
-
-export const Ldiv = styled.div`
-
-`;

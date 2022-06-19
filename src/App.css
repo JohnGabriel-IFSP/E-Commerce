@@ -3,18 +3,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.form{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-}
-
-.input{
-    flex: 1;
-    border: none;
-    min-width: 40%;
-    margin: 10px 0px;
-    padding: 10px;
-    border-radius: 5px;
-}
