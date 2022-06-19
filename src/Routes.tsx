@@ -3,7 +3,6 @@ import {
     Routes,
     Route,
 } from 'react-router-dom'
-import App from './App'
 import { Cadastrar } from './pages/Cadastrar'
 import { Carrinho } from './pages/Carrinho'
 import { Home } from './pages/Home'
