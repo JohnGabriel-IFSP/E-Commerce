@@ -3,32 +3,15 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import {Conteiner, Leftsideconteiner, Tittle, Cinput, Input, Link, Button, Rightsideconteiner, Termo, Ldiv} from "./style";
 import { Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from "yup";
-import Axios from "axios";
-import axios from 'axios';
 
 export const LoginComponent = () => {
 
-  const handleClickLogin = (values: any) => {
-    Axios.post("https://localhost:8080/LoginCliente", {
-      email: values.email,
-      password: values.password,
-    }).then((response) =>{
-      console.log(response)
-    })
-  };
+  const handleClickLogin = (values: any) => console.log(values);
   const validationLogin = Yup.object().shape({
     email: Yup.string().email("Não é um email").required(),
     password: Yup.string().min(8, "A senha deve ter no minimo 8 dígitos").required(),
   });
-  const handleClickCadastro = (values: any) => {
-    Axios.post("https://localhost:8080/CadastroCliente", {
-      username: values.username,
-      password: values.password,
-      userfirstname: values.userfirstname,
-      usersecondname: values.usersecondname,
-      email: values.email,
-    })
-  };
+  const handleClickCadastro = (values: any) => console.log(values);
   const validationCadastro = Yup.object().shape({
     nome: Yup.string().required(),
     sobrenome: Yup.string().required(),
@@ -36,12 +19,10 @@ export const LoginComponent = () => {
     email: Yup.string().email("Não é um email").required(),
     password: Yup.string().min(8, "A senha deve ter no minimo 8 dígitos").required(),
     confirmaSenha: Yup.string().oneOf([Yup.ref("password"), null], "As senhas não são iguais"),
-    
 
   })
-  
+
     return (
-      
       <Conteiner>
           <Leftsideconteiner>
               <Tittle>Login</Tittle>
