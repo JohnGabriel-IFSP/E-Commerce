@@ -1,4 +1,5 @@
-import React, { useState} from 'react';
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../../contexts/auth';
 
 import { Google, Twitter } from '@mui/icons-material';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
@@ -6,6 +7,8 @@ import {Conteiner, Leftsideconteiner, Tittle, Form, Cinput, Input, Link, Button,
 
 
 export const LoginComponent = () => {
+
+    const {authenticated, login }:any = useContext(AuthContext);
 
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
@@ -18,6 +21,7 @@ export const LoginComponent = () => {
     const handleSubmitLogin = (e:any) =>{
         e.preventDefault();
         console.log("submit", {user, password});
+        login(user, password);
     };
 
     const handleSubmitRegister = (e:any) =>{
@@ -81,11 +85,12 @@ export const LoginComponent = () => {
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}/>
+
                     <Termo>Ao finalizar meu cadastro certifico que tenho 
                            mais de 18 anos de idade e aceito os Termos e 
                            Condições e a <b>Política de Privacidade</b>
                     </Termo>
-                    <Button type='submit'>Criar</Button>
+                    <Button type='submit'> Criar </Button>
                 </Form>
             </Rightsideconteiner>
       </Conteiner>
