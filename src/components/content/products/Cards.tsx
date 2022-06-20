@@ -72,7 +72,7 @@ export function Cards({productsContent}:productsProps){
                     <Image key={card.imgs[0].key} src={card.imgs[0].url} alt="" />
                     <InfoCard>
                         <span>{card.productName}</span>
-                        <span>{card.price}</span>
+                        <span>R$ {card.price}</span>
                     </InfoCard>
                 </Card>
             ))}

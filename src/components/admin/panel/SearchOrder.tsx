@@ -1,13 +1,16 @@
-import { Button, ButtonContainer, Form, FormContainer, Input, Title } from "./style";
+import { Button, ButtonContainer, Fields, Form, FormContainer, Input, Label, Title } from "./style";
 
 export function SearchOrder({current}:any){
     return(
             <FormContainer display={current ? 'flex' : 'none'}>
-                <Form>
-                <Title>Buscar Pedido</Title>
+                <Form onSubmit={()=>{}}>
+                    <Title>Buscar Pedido</Title>
+                    <Fields>
+                        <Input placeholder=" "></Input>
+                        <Label>Código do Pedido</Label>
+                    </Fields>
                     <ButtonContainer>
-                        <Input placeholder = "Buscar Nome Produto"></Input>
-                        <Button>Buscar</Button>
+                        <Button type="submit">Enviar</Button>
                     </ButtonContainer>
                 </Form>
             </FormContainer>

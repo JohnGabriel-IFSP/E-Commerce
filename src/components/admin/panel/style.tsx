@@ -56,6 +56,12 @@ export const Title = styled.h1`
     margin-bottom: 15px;
 `;
 
+export const SearchContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 25px 25px 0px 25px;
+`;
+
 export const Form = styled.form`
     display: flex;
     flex-direction: column;

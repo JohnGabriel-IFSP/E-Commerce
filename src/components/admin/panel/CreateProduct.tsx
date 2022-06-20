@@ -35,6 +35,7 @@ export function CreateProduct({current}:any){
         formData.append('imageTwo', refImage2.current?.files[0]);
         formData.append('imageThree', refImage3.current?.files[0]);
         formData.append('imageFour', refImage4.current?.files[0]);
+        formData.append('_id', data._id)
         formData.append('productName', data.productName)
         formData.append('category', data.category)
         formData.append('size', data.size)
@@ -42,14 +43,20 @@ export function CreateProduct({current}:any){
         formData.append('color', data.color)
         formData.append('price', data.price)
         formData.append('description', data.description)
-
+        
         Post(formData)
+
+        location.reload()
     }
 
     return(
             <FormContainer display={current ? 'flex' : 'none'}>
                 <Form onSubmit={handleSubmit(postProduct)}>
                     <Title>Cadastrar Produto</Title>
+                    <Fields>
+                        <Input placeholder=" " {...register("_id")}></Input>
+                        <Label>Código do Produto</Label>
+                    </Fields>
                     <Fields>
                         <Input placeholder=" " {...register("productName")}></Input>
                         <Label>Nome do Produto</Label>
