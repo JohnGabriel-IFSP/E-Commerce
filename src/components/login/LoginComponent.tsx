@@ -33,6 +33,7 @@ export const LoginComponent = () => {
       <Conteiner>
           <Leftsideconteiner>
               <Tittle>Login</Tittle>
+              <p>{String(authenticated)}</p>
               <Form onSubmit={handleSubmitLogin}>
                   <Input 
                   type='username' 

@@ -13,12 +13,13 @@ import { Login } from './pages/Login'
 import { Produtos } from './pages/Produtos'
 import { ProdutoUnico } from './pages/ProdutoUnico'
 import { Sobre } from './pages/Sobre'
+import { MinhaConta } from './pages/MinhaConta'
 
 import { AuthProvider, AuthContext } from './contexts/auth'
 
 export function AppRoutes(){
 
-    //const Private = ({children}:any) => {
+    const Private = ({children}:any) => {
         const { authenticated, loading }:any = useContext(AuthContext);
 
         if(loading){
@@ -29,22 +30,23 @@ export function AppRoutes(){
             return <Navigate to="/login" />
         }
 
-        //return children;
-    //}
+        return children;
+    }
 
     return(
         <Router>
-            <Routes>
-                <AuthProvider>
-                <Route path='/' element={<Home/>} />
-                <Route path='/login' element={<Login/>}/>
-                <Route path='/cadastrar' element={<Cadastrar/>}/>
-                <Route path='/produtos' element={<Produtos/>}/>
-                <Route path='/carrinho' element={<Carrinho/>}/>
-                <Route path='/sobre' element={<Sobre/>}/>
-                <Route path='/pageproduto' element={<ProdutoUnico/>}/>
-                </AuthProvider>
-            </Routes>
+            <AuthProvider>
+                <Routes>
+                    <Route path='/' element={<Home/>} />
+                    <Route path='/login' element={<Login/>}/>
+                    <Route path='/cadastrar' element={<Cadastrar/>}/>
+                    <Route path='/produtos' element={<Produtos/>}/>
+                    <Route path='/carrinho' element={<Carrinho/>}/>
+                    <Route path='/sobre' element={<Sobre/>}/>
+                    <Route path='/pageproduto' element={<ProdutoUnico/>}/>
+                    <Route path='/minhaconta' element={<Private><MinhaConta/></Private>}/>
+                </Routes>
+            </AuthProvider>
         </Router>
     )
 }
