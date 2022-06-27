@@ -1,13 +1,23 @@
 import React from "react";
 
-import { Conteiner } from "../login/style";
+import { ConteinerPrincipal, Conteiner, Wrapper1, Wrapper2, Item, UltPedido, Title } from "../PageCliente/ClienteStyle"
 
 
 export const ClientePage = () => {
     return (
+        <ConteinerPrincipal>
+        <Title>Conta Urban Store</Title>
         <Conteiner>
-            <h1>Página Cliente</h1>
+            <Wrapper1>
+                <Item>Informações</Item>
+                <Item>Pedidos</Item>
+            </Wrapper1>
+            <Wrapper2>
+                <UltPedido></UltPedido>
+            </Wrapper2>
         </Conteiner>
+        </ConteinerPrincipal>
+        
     )
 
 }
