@@ -8,7 +8,7 @@ import {Conteiner, Leftsideconteiner, Tittle, Form, Cinput, Input, Link, Button,
 
 export const LoginComponent = () => {
 
-    const {authenticated, login }:any = useContext(AuthContext);
+    const {authenticated, Login }:any = useContext(AuthContext);
 
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
@@ -21,8 +21,10 @@ export const LoginComponent = () => {
     const handleSubmitLogin = (e:any) =>{
         e.preventDefault();
         console.log("submit", {user, password});
-        login(user, password);
+        Login(user, password);
     };
+
+    
 
     const handleSubmitRegister = (e:any) =>{
         e.preventDefault();
