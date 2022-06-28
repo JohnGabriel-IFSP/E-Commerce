@@ -1,6 +1,6 @@
 import { PersonOutlineOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material';
-
 import { AccountContainer, ButtonSearch, CartContainer, Center, Input, Left, LinkLogo, Logo, MenuContainer, Navbar, Right, SearchContainer, Wrapper } from "./style";
+import { useForm } from 'react-hook-form';
 
 export function Header(){
     return (
@@ -12,10 +12,10 @@ export function Header(){
                     </LinkLogo>
                 </Left>
                 <Center>
-                    <SearchContainer>
+                    <SearchContainer onSubmit={()=>{alert("Teste")}}>
                         <Input></Input>
                         <ButtonSearch>
-                            <Search></Search>
+                            <Search onClick={() => {window.location.href = "/produtos"}}></Search>
                         </ButtonSearch>
                     </SearchContainer>
                 </Center>
