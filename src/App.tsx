@@ -8,6 +8,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <AppRoutes/>
         </ThemeProvider>
+        
     );
 }
 

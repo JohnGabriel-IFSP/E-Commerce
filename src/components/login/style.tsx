@@ -94,10 +94,15 @@ export const Link = styled.a`
 export const Button = styled.button`
     width: 100%;
     height: 35px;
-    border: none;
-    background-color: lightgrey;
+    background-color: ${({theme}) => theme.colors.white};
+    color: ${({theme}) => theme.colors.black};
     cursor: pointer;
+    border: none;
     border-radius: 5px;
+
+    &:hover{
+        border: 1px solid teal;
+    }
 `;
 
 export const Termo = styled.span`
