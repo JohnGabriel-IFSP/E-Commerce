@@ -47,8 +47,8 @@ export function AppRoutes(){
                     <Route path='/sobre' element={<Sobre/>}/>
                     <Route path='/pageproduto' element={<ProdutoUnico/>}/>
                     <Route path='/minhaconta' element={<Private><MinhaConta/></Private>}/>
-                    <Route path='/admin' element={<Private><Admin/></Private>}/>
-                    <Route path='/panel' element={<Private><AdminPanel/></Private>}/>
+                    <Route path='/admin' element={<Admin/>}/>
+                    <Route path='/panel' element={<AdminPanel/>}/>
                 </Routes>
             </AuthProvider>
         </Router>
