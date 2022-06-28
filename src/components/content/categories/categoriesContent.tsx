@@ -1,5 +1,6 @@
 export default[
     {
+        _id: '1',
         title: 'First Category',
         description: "Sample of description category",
         images:{
@@ -10,6 +11,7 @@ export default[
         }
     },
     {
+        _id: '2',
         title: 'Second Category',
         price: 'R$999.99',
         description: "Sample of description category",
@@ -21,6 +23,7 @@ export default[
         }
     },
     {
+        _id: '3',
         title: 'Third Category',
         price: 'R$999.99',
         description: "Sample of description category",

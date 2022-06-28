@@ -6,6 +6,8 @@ import {
     Route,
     Navigate,
 } from 'react-router-dom'
+import { Admin } from './pages/Admin'
+import { AdminPanel } from './pages/AdminPanel'
 import { Cadastrar } from './pages/Cadastrar'
 import { Carrinho } from './pages/Carrinho'
 import { Home } from './pages/Home'
@@ -45,6 +47,8 @@ export function AppRoutes(){
                     <Route path='/sobre' element={<Sobre/>}/>
                     <Route path='/pageproduto' element={<ProdutoUnico/>}/>
                     <Route path='/minhaconta' element={<Private><MinhaConta/></Private>}/>
+                    <Route path='/admin' element={<Private><Admin/></Private>}/>
+                    <Route path='/panel' element={<Private><AdminPanel/></Private>}/>
                 </Routes>
             </AuthProvider>
         </Router>
