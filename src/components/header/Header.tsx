@@ -1,8 +1,17 @@
 import { PersonOutlineOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material';
 import { AccountContainer, ButtonSearch, CartContainer, Center, Input, Left, LinkLogo, Logo, MenuContainer, Navbar, Right, SearchContainer, Wrapper } from "./style";
-import { useForm } from 'react-hook-form';
 
 export function Header(){
+    
+    const SearchByName = (name:string) =>{
+        console.log(name)
+    }
+
+    const handleProductName = () =>{
+        let name = document.getElementById("input-name")?.value
+        SearchByName(name.toLowerCase())
+    }
+
     return (
         <Navbar>
             <Wrapper>
@@ -12,10 +21,10 @@ export function Header(){
                     </LinkLogo>
                 </Left>
                 <Center>
-                    <SearchContainer onSubmit={()=>{alert("Teste")}}>
-                        <Input></Input>
+                    <SearchContainer>
+                        <Input placeholder='Digite o nome do produto' id='input-name'></Input>
                         <ButtonSearch>
-                            <Search onClick={() => {window.location.href = "/produtos"}}></Search>
+                            <Search onClick={handleProductName}></Search>
                         </ButtonSearch>
                     </SearchContainer>
                 </Center>

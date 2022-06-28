@@ -44,7 +44,7 @@ export const Center = styled.div`
     flex: 2;
 `;
 
-export const SearchContainer = styled.form`
+export const SearchContainer = styled.div`
     display: flex;
     align-items: center;
     border: 0.5px solid lightgray;
