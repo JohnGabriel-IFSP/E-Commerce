@@ -6,7 +6,7 @@ import './App.css'
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <AppRoutes/>
+            <AppRoutes/>  
         </ThemeProvider>
         
     );

@@ -225,3 +225,8 @@ export const Form = styled.form`
 
 `;
 
+export const CarrinhoVazio = styled.div`
+    display: flex;
+    width: 100%;
+`;
+
