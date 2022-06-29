@@ -4,8 +4,10 @@ import { Pagination } from "./Pagination/Pagination";
 import { useEffect, useState } from "react";
 import { SelectorPagination } from "./Pagination/SelectorPagination";
 import { OrderItens } from "./Pagination/OrderItens";
+import { useParams } from "react-router-dom";
 
 export function Products(){
+    const { name } = useParams();
     const [itens, setItens] = useState([]);
     const [itensPerPage, setItensPerPage] = useState(15);
     const [currentPage, setCurrentPage] = useState(0);
@@ -15,12 +17,29 @@ export function Products(){
     const endIndex = startIndex + itensPerPage;
     const currentItens = itens.slice(startIndex,endIndex);
 
+    let url='';
+    switch(name){
+        case 'all':
+            url = "http://localhost:8080/Products"
+            break;
+        case 'category1':
+            url = `http://localhost:8080/Products/searchByCategory/category 1`
+            break;
+        case 'category2':
+            url = `http://localhost:8080/Products/searchByCategory/category 2`
+            break;
+        case 'category3':
+            url = `http://localhost:8080/Products/searchByCategory/category 3`
+            break;
+        default:
+            url = `http://localhost:8080/Products/searchByName/${name}`
+    }
+    
     useEffect(()=>{
         const fetchData = async () => {
-            const Data = await fetch('http://localhost:8080/Products')
+            const Data = await fetch(url)
                 .then(response => response.json())
                 .then(data => data)
-
             setItens(Data)
         }
         fetchData()

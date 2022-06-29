@@ -6,7 +6,7 @@ export function Categories(){
     return(
         <Container>
             <CardsContainer>
-                <Cards categoriesContent = { categoriesContent}/>
+                <Cards categoriesContent = { categoriesContent }/>
             </CardsContainer>
         </Container>
     )

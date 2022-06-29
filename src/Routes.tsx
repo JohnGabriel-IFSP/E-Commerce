@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom'
 import { Admin } from './pages/Admin'
 import { AdminPanel } from './pages/AdminPanel'
-import { Cadastrar } from './pages/Cadastrar'
 import { Carrinho } from './pages/Carrinho'
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
@@ -41,11 +40,10 @@ export function AppRoutes(){
                 <Routes>
                     <Route path='/' element={<Home/>} />
                     <Route path='/login' element={<Login/>}/>
-                    <Route path='/cadastrar' element={<Cadastrar/>}/>
-                    <Route path='/produtos' element={<Produtos/>}/>
+                    <Route path='/produtos/:name' element={<Produtos/>}/>
                     <Route path='/carrinho' element={<Carrinho/>}/>
                     <Route path='/sobre' element={<Sobre/>}/>
-                    <Route path='/pageproduto' element={<ProdutoUnico/>}/>
+                    <Route path='/pageproduto/:id' element={<ProdutoUnico/>}/>
                     <Route path='/minhaconta' element={<Private><MinhaConta/></Private>}/>
                     <Route path='/admin' element={<Admin/>}/>
                     <Route path='/panel' element={<AdminPanel/>}/>

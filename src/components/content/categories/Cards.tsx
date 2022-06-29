@@ -60,10 +60,11 @@ type categoriesProps = {
 }
 
 export function Cards({categoriesContent}:categoriesProps){
+    const url = "/produtos/category"
     return(
         <CardContainer>
             {categoriesContent.map((card:any) => (
-                <Card key={card._id} href="/produtos">
+                <Card key={card._id} href={url+card._id}>
                     <Image src={card.images.main} alt="" />
                     <InfoCard>
                         <h3>{card.title}</h3>

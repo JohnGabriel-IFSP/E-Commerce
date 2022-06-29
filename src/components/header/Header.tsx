@@ -2,13 +2,12 @@ import { PersonOutlineOutlined, Search, ShoppingCartOutlined } from '@mui/icons-
 import { AccountContainer, ButtonSearch, CartContainer, Center, Input, Left, LinkLogo, Logo, MenuContainer, Navbar, Right, SearchContainer, Wrapper } from "./style";
 
 export function Header(){
-    
     const SearchByName = (name:string) =>{
-        console.log(name)
+        window.location.href = `/produtos/${name}`
     }
 
     const handleProductName = () =>{
-        let name = document.getElementById("input-name")?.value
+        let name = document.getElementById("input-name")?.value || 'all'
         SearchByName(name.toLowerCase())
     }
 

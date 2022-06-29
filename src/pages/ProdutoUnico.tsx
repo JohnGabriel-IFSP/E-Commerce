@@ -5,11 +5,8 @@ import { Header } from '../components/header/Header'
 export function ProdutoUnico (){
   return (
       <>
-      
-      <Header></Header>
-      <ProductPageConteiner></ProductPageConteiner>
-      <Footer></Footer>
-      
+        <Header/>
+        <ProductPageConteiner/>
       </>
   )
 }

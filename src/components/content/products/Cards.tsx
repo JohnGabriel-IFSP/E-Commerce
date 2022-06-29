@@ -65,10 +65,13 @@ type productsProps = {
 }
 
 export function Cards({productsContent}:productsProps){
+    const ShowProduct = (id:string) =>{
+        window.location.href = `/pageproduto/${id}`
+    }
     return(
         <CardContainer>
             {productsContent.map((card:any) => (
-                <Card key={card._id}>
+                <Card key={card._id} onClick={() =>{ShowProduct(card._id)}}>
                     <Image key={card.imgs[0].key} src={card.imgs[0].url} alt="" />
                     <InfoCard>
                         <span>{card.productName}</span>

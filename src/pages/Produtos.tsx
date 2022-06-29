@@ -5,9 +5,8 @@ import { Header } from "../components/header/Header";
 export function Produtos(){
     return(
         <>
-            <Header></Header>
-            <Products></Products>
-            <Footer></Footer>
+            <Header/>
+            <Products/>
         </>
     );
 }
