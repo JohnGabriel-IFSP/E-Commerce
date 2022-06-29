@@ -1,46 +1,12 @@
-import { Add, Delete, Remove } from "@mui/icons-material"
+import { Add, Remove } from "@mui/icons-material"
 import { ContentConteiner, LeftSide, RightSide, Title, InputCEP, Button, DivFrete, Div, Text, Bottom, 
     Product, ProductDetail, Image, Details, ProductName, ProductId, ProductColor, ProductSize, ProductPrice, Top,
     ProductAmountConteiner, ProductAmount, Hr, ProductPriceDetail, SummaryTitle, SummaryItemText, SummaryItemPrice, 
-    SummaryItem, Last, ShippingOption, ShippingName, ShippingPrice, InputRadio, Form, CarrinhoVazio } from "./CartStyle"
+    SummaryItem, Last, ShippingOption, ShippingName, ShippingPrice, InputRadio, Form } from "./CartStyle"
 
-import { useCart } from "react-use-cart";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import conteudoCarrinho from "./conteudoCarrinho"
 
 export const CartConteiner = () =>{
-
-    const { id } = useParams();
-  const [item, setItem] = useState([]);
-  const [images, setImages] = useState([]);
-  const [active, setActive] = useState('');
-
-  const { addItem } = useCart();
-
-
-  useEffect(()=>{
-    const fetchData = async () => {
-        const Data = await fetch(`http://localhost:8080/Products/${id}`)
-            .then(response => response.json())
-            .then(data => data)
-        setItem(Data)
-        setImages(Data.imgs)
-        setActive(Data.imgs[0].url)
-    }
-    fetchData()
-  }, [])
-
-  const {
-    isEmpty,
-    items,
-    cartTotal,
-    updateItemQuantity,
-    removeItem,
-    emptyCart, 
-} = useCart();
-
-{/*if(isEmpty) return <h1>Carrinho Vazio</h1>*/}
-
     return(
         <ContentConteiner>
             <Title>
@@ -48,26 +14,24 @@ export const CartConteiner = () =>{
             </Title>
             <Top>
                 <LeftSide>
-            
-                    {items.map((item, index) => (
-                        <Product key={index}>
+                    {conteudoCarrinho.map((item:any) => (
+                        <Product>
                             <ProductDetail>
-                                <Image src={item.imageOne}/>
+                                <Image src='https://cf.shopee.com.br/file/71ad80f1c46275424f2f84cbe421537c'/>
                                 <Details>
-                                    <ProductName><b>Produto:</b> {item.productName} </ProductName>
-                                    <ProductId><b>ID:</b>{item._id}</ProductId>
-                                    <ProductColor color={item.color}/>
-                                    <ProductSize><b>Tamanho: </b>{item.size}</ProductSize>
+                                    <ProductName><b>Produto:</b> Camisa Masculina</ProductName>
+                                    <ProductId><b>ID:</b>{item.id_produto}</ProductId>
+                                    <ProductColor color={item.cor}/>
+                                    <ProductSize><b>Tamanho: </b>{item.tamanho}</ProductSize>
                                 </Details>
                             </ProductDetail>
                         <ProductPrice>
                             <ProductAmountConteiner>
-                                <Add cursor='pointer' onClick={()=> updateItemQuantity(item._id, item.quantity + 1)} />
-                                <ProductAmount>{item.quantity}</ProductAmount>
-                                <Remove cursor='pointer' onClick={()=> updateItemQuantity(item._id, item.quantity - 1)} />
-                                <Delete onClick={()=> removeItem(item._id)} />
+                                <Add cursor='pointer'/>
+                                <ProductAmount>{item.quantidade}</ProductAmount>
+                                <Remove cursor='pointer'/>
                             </ProductAmountConteiner>
-                            <ProductPriceDetail>{item.price}</ProductPriceDetail>
+                            <ProductPriceDetail>{item.preco}</ProductPriceDetail>
                         </ProductPrice>
                     </Product>
                     ))}
@@ -89,7 +53,7 @@ export const CartConteiner = () =>{
                     <Last>
                         <SummaryItem  color ="total">
                             <SummaryItemText>Total</SummaryItemText>
-                            <SummaryItemPrice>R$ {cartTotal}</SummaryItemPrice>
+                            <SummaryItemPrice>R$ 109,97</SummaryItemPrice>
                         </SummaryItem>
                         <Button>Finalizar Compra</Button>
                     </Last>

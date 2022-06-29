@@ -1,7 +1,6 @@
 import { Add, Remove } from "@mui/icons-material"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useCart } from "react-use-cart";
 import { Conteiner, ImgConteiner, Image, InfoConteiner, Title, Sobre, Price, 
     FilterConteiner,Filter, FilterTitle, FilterColor, FilterSize, FilterSizeOption,
     AddConteiner, Amount, AmountConteiner, Button, PriorityImg, SelectImg, ImageSecondary   } from "./productStyle"
@@ -11,9 +10,6 @@ export const ProductPageConteiner = () => {
   const [item, setItem] = useState([]);
   const [images, setImages] = useState([]);
   const [active, setActive] = useState('');
-
-  const { addItem } = useCart();
-
 
   useEffect(()=>{
     const fetchData = async () => {
@@ -61,7 +57,7 @@ export const ProductPageConteiner = () => {
                     <Amount>1</Amount>
                     <Add/>
                 </AmountConteiner>
-                <Button onClick={()=>{addItem(item)}} >Enviar para o Carrinho</Button>
+                <Button onClick={()=>{console.log(images)}}>Enviar para o Carrinho</Button>
             </AddConteiner>
         </InfoConteiner>
     </Conteiner>
