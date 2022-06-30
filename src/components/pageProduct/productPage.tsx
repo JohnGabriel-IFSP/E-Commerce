@@ -5,7 +5,11 @@ import { Conteiner, ImgConteiner, Image, InfoConteiner, Title, Sobre, Price,
     FilterConteiner,Filter, FilterTitle, FilterColor, FilterSize, FilterSizeOption,
     AddConteiner, Amount, AmountConteiner, Button, PriorityImg, SelectImg, ImageSecondary   } from "./productStyle"
 
-export const ProductPageConteiner = () => {
+import { connect } from "react-redux";
+import { addToCart } from "../../redux/Shopping/shopping-actions";
+
+const ProductPage = ({addToCart}:any) => {
+
   const { id } = useParams();
   const [item, setItem] = useState([]);
   const [images, setImages] = useState([]);
@@ -57,9 +61,16 @@ export const ProductPageConteiner = () => {
                     <Amount>1</Amount>
                     <Add/>
                 </AmountConteiner>
-                <Button onClick={()=>{console.log(images)}}>Enviar para o Carrinho</Button>
+                <Button onClick={()=> addToCart(item._id)}>Enviar para o Carrinho</Button>
             </AddConteiner>
         </InfoConteiner>
     </Conteiner>
   )
 }
+
+const mapDispatchToProps = (dispatch:any) =>{
+    return{
+        addToCart: (id:any) => dispatch(addToCart(id)),
+    }
+}
+export default connect(null, mapDispatchToProps)(ProductPage);
