@@ -14,21 +14,21 @@ export const CartItem = ({itemData , removeFromCart, adjustQuantity}:any) => {
     return (
         <Product>
             <ProductDetail>
-                <Image src={itemData.image}/>
+                <Image src={itemData.imageUlr}/>
                 <Details>
-                <ProductName><b>Produto:</b> {itemData.productName} </ProductName>
-                <ProductId><b>ID:</b>{itemData._id}</ProductId>
+                <ProductName><b>Produto:</b> {itemData.name} </ProductName>
+                <ProductId><b>ID:</b>{itemData.product}</ProductId>
                 <ProductColor color={itemData.color}/>
                 <ProductSize><b>Tamanho: </b>{itemData.size}</ProductSize>
                 </Details>
             </ProductDetail>
             <ProductPrice>
                 <ProductAmountConteiner>
-                    <Add cursor='pointer'/>
+                    <Remove cursor='pointer' onClick={()=>{setInput(input>1 ? input-1 : input)}}/>
                     <ProductAmount>
                         <input min='1' type='number' id="qty" name="qty" value={input} onChange = {onChangeHandler}></input>
                     </ProductAmount>
-                    <Remove cursor='pointer'/>
+                    <Add cursor='pointer' onClick={()=>{setInput(input<itemData.countInStock ? input+1 : input)}}/>
                 </ProductAmountConteiner>
                 <ProductPriceDetail>{itemData.price}</ProductPriceDetail>
             </ProductPrice>

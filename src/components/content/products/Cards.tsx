@@ -74,7 +74,7 @@ export function Cards({productsContent}:productsProps){
                 <Card key={card._id} onClick={() =>{ShowProduct(card._id)}}>
                     <Image key={card.imgs[0].key} src={card.imgs[0].url} alt="" />
                     <InfoCard>
-                        <span>{card.productName}</span>
+                        <span>{card.productName[0].toUpperCase()+card.productName.substr(1)}</span>
                         <span>R$ {card.price}</span>
                     </InfoCard>
                 </Card>

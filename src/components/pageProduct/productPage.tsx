@@ -11,7 +11,7 @@ import { getProductDetails } from "../../redux/Shopping/actions/productActions";
 import { addToCart } from "../../redux/Shopping/actions/cartActions";
 import { AnyAction} from "redux";
 
-export const ProductPage = ({match, history}:any) => {
+export const ProductPage = () => {
 
   const [qty, setQty] = useState(1)
   const dispatch = useDispatch();
@@ -24,18 +24,23 @@ export const ProductPage = ({match, history}:any) => {
     if(product && (id) !== product._id){
         dispatch(getProductDetails(id))
     }
-  }, [dispatch, product, match]);
+  }, [dispatch, product]);
 
-  
   const [item, setItem] = useState([]);
   const [images, setImages] = useState([]);
   const [active, setActive] = useState('');
+
+  const handleString = (string:string) =>{
+    return string[0].toUpperCase()+string.substr(1)
+  }
 
   useEffect(()=>{
     const fetchData = async () => {
         const Data = await fetch(`http://localhost:8080/Products/${id}`)
             .then(response => response.json())
             .then(data => data)
+        Data.productName = handleString(Data.productName)
+        Data.description = handleString(Data.description)
         setItem(Data)
         setImages(Data.imgs)
         setActive(Data.imgs[0].url)
@@ -43,6 +48,9 @@ export const ProductPage = ({match, history}:any) => {
     fetchData()
   }, [])
 
+  const addToCartHandler = () =>{
+    dispatch(addToCart(product._id, qty));
+  }
   return (
     <Conteiner>
         <ImgConteiner>
@@ -73,11 +81,11 @@ export const ProductPage = ({match, history}:any) => {
             </FilterConteiner>
             <AddConteiner>
                 <AmountConteiner>
-                    <Remove/>
-                    <Amount>1</Amount>
-                    <Add/>
+                    <Remove cursor='pointer' onClick={()=>{setQty(qty>1 ? qty-1 : qty)}}/>
+                    <Amount>{qty}</Amount>
+                    <Add cursor='pointer' onClick={()=>{setQty(qty<item.inventory ? qty+1 : qty)}}/>
                 </AmountConteiner>
-                <Button onClick={()=> addToCart(item._id)}>Enviar para o Carrinho</Button>
+                <Button onClick={addToCartHandler}>Enviar para o Carrinho</Button>
             </AddConteiner>
         </InfoConteiner>
     </Conteiner>
