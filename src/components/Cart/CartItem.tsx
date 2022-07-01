@@ -14,7 +14,7 @@ export const CartItem = ({itemData , removeFromCart, adjustQuantity}:any) => {
     return (
         <Product>
             <ProductDetail>
-                <Image src={itemData.imageUlr}/>
+                <Image src={itemData.imageUrl}/>
                 <Details>
                 <ProductName><b>Produto:</b> {itemData.name} </ProductName>
                 <ProductId><b>ID:</b>{itemData.product}</ProductId>

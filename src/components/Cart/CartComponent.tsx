@@ -12,39 +12,11 @@ import { CartItem } from "./CartItem";
 export const CartConteiner = () =>{
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
-    let {cartItems} = cart; //setar como const quando tirar o mock
-
+    const {cartItems} = cart;
     const [frete, setfrete] = useState(0);
     const [subTotalPrice, setSubTotalPrice] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
-
-    cartItems = [
-        {
-            product : "1",
-            name : "Product 1",
-            category : "category 1",
-            size : "GG",
-            imageUlr : "http://localhost:8080/files/6218c8b0a99c13bd-Can_Coke.jpg",
-            description: "Teste description",
-            color: "Red",
-            price: 19.99,
-            countInStock: 5,
-            qty: 1
-        },
-        {
-            product : "2",
-            name : "Product 2",
-            category : "category 1",
-            size : "GG",
-            imageUlr : "http://localhost:8080/files/6218c8b0a99c13bd-Can_Coke.jpg",
-            description: "Teste description",
-            color: "Red",
-            price: 19.99,
-            countInStock: 10,
-            qty: 1
-        }
-    ]
 
     useEffect(() =>{
         let items = 0;
