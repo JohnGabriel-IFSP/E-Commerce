@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 //Actions
 import { getProductDetails } from "../../redux/Shopping/actions/productActions";
 import { addToCart } from "../../redux/Shopping/actions/cartActions";
-import { AnyAction, Store } from "redux";
+import { AnyAction} from "redux";
 
 export const ProductPage = ({match, history}:any) => {
 
@@ -18,14 +18,15 @@ export const ProductPage = ({match, history}:any) => {
 
   const productDetails = useSelector((state:AnyAction) => state.getProductDetails);
   const {loading, error, product} = productDetails;
-
+  const { id } = useParams();
+  
   useEffect(() =>{
-    if(product && match.params.id !== product._id){
-        dispatch(getProductDetails(match.params.id))
+    if(product && (id) !== product._id){
+        dispatch(getProductDetails(id))
     }
   }, [dispatch, product, match]);
 
-  const { id } = useParams();
+  
   const [item, setItem] = useState([]);
   const [images, setImages] = useState([]);
   const [active, setActive] = useState('');
