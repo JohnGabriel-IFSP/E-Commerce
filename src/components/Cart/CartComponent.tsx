@@ -4,9 +4,28 @@ import { ContentConteiner, LeftSide, RightSide, Title, InputCEP, Button, DivFret
     ProductAmountConteiner, ProductAmount, Hr, ProductPriceDetail, SummaryTitle, SummaryItemText, SummaryItemPrice, 
     SummaryItem, Last, ShippingOption, ShippingName, ShippingPrice, InputRadio, Form } from "./CartStyle"
 
-import conteudoCarrinho from "./conteudoCarrinho"
+import  {CartItem}  from './CartItem'; 
+import React, { useState, useEffect } from "react";
 
-export const CartConteiner = () =>{
+export const CartConteiner = ({ cart }:any) =>{
+
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalItems, setTotalItems] = useState(0);
+
+    useEffect(() =>{
+        let items = 0;
+        let price = 0;
+
+        cart.forEach((item:any) =>{
+            items += item.qty;
+            price += item.qty * item.price
+        })
+
+        setTotalPrice(price)
+        setTotalItems(items)
+
+    }, [cart, totalPrice, totalItems, setTotalPrice, setTotalItems])
+
     return(
         <ContentConteiner>
             <Title>
@@ -14,46 +33,28 @@ export const CartConteiner = () =>{
             </Title>
             <Top>
                 <LeftSide>
-                    {conteudoCarrinho.map((item:any) => (
-                        <Product>
-                            <ProductDetail>
-                                <Image src='https://cf.shopee.com.br/file/71ad80f1c46275424f2f84cbe421537c'/>
-                                <Details>
-                                    <ProductName><b>Produto:</b> Camisa Masculina</ProductName>
-                                    <ProductId><b>ID:</b>{item.id_produto}</ProductId>
-                                    <ProductColor color={item.cor}/>
-                                    <ProductSize><b>Tamanho: </b>{item.tamanho}</ProductSize>
-                                </Details>
-                            </ProductDetail>
-                        <ProductPrice>
-                            <ProductAmountConteiner>
-                                <Add cursor='pointer'/>
-                                <ProductAmount>{item.quantidade}</ProductAmount>
-                                <Remove cursor='pointer'/>
-                            </ProductAmountConteiner>
-                            <ProductPriceDetail>{item.preco}</ProductPriceDetail>
-                        </ProductPrice>
-                    </Product>
+                    {cart.map((item:any) => (
+                        <CartItem key={item._id} itemData = {item}/>
                     ))}
                 </LeftSide>
                 <RightSide>
                     <SummaryTitle>Resumo do Pedido</SummaryTitle>
                     <SummaryItem>
                         <SummaryItemText>Subtotal</SummaryItemText>
-                        <SummaryItemPrice>R$ 99,98</SummaryItemPrice>
+                        <SummaryItemPrice>R$ {totalPrice}</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
                         <SummaryItemText>Frete</SummaryItemText>
                         <SummaryItemPrice>R$ 9,99</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
-                        <SummaryItemText>Descontos</SummaryItemText>
-                        <SummaryItemPrice>-R$ 0,00</SummaryItemPrice>
+                        <SummaryItemText>Quantidade de Items</SummaryItemText>
+                        <SummaryItemPrice>{totalItems}</SummaryItemPrice>
                     </SummaryItem>
                     <Last>
                         <SummaryItem  color ="total">
                             <SummaryItemText>Total</SummaryItemText>
-                            <SummaryItemPrice>R$ 109,97</SummaryItemPrice>
+                            <SummaryItemPrice>R$ {totalPrice}</SummaryItemPrice>
                         </SummaryItem>
                         <Button>Finalizar Compra</Button>
                     </Last>

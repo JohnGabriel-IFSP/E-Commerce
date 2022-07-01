@@ -4,11 +4,26 @@ import { useParams } from "react-router-dom";
 import { Conteiner, ImgConteiner, Image, InfoConteiner, Title, Sobre, Price, 
     FilterConteiner,Filter, FilterTitle, FilterColor, FilterSize, FilterSizeOption,
     AddConteiner, Amount, AmountConteiner, Button, PriorityImg, SelectImg, ImageSecondary   } from "./productStyle"
+import { useDispatch, useSelector } from "react-redux";
 
-import { connect } from "react-redux";
-import { addToCart } from "../../redux/Shopping/shopping-actions";
+//Actions
+import { getProductDetails } from "../../redux/Shopping/actions/productActions";
+import { addToCart } from "../../redux/Shopping/actions/cartActions";
+import { AnyAction, Store } from "redux";
 
-const ProductPage = ({addToCart}:any) => {
+export const ProductPage = ({match, history}:any) => {
+
+  const [qty, setQty] = useState(1)
+  const dispatch = useDispatch();
+
+  const productDetails = useSelector((state:AnyAction) => state.getProductDetails);
+  const {loading, error, product} = productDetails;
+
+  useEffect(() =>{
+    if(product && match.params.id !== product._id){
+        dispatch(getProductDetails(match.params.id))
+    }
+  }, [dispatch, product, match]);
 
   const { id } = useParams();
   const [item, setItem] = useState([]);
@@ -67,10 +82,3 @@ const ProductPage = ({addToCart}:any) => {
     </Conteiner>
   )
 }
-
-const mapDispatchToProps = (dispatch:any) =>{
-    return{
-        addToCart: (id:any) => dispatch(addToCart(id)),
-    }
-}
-export default connect(null, mapDispatchToProps)(ProductPage);

@@ -1,7 +1,12 @@
 import { PersonOutlineOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material';
 import { AccountContainer, ButtonSearch, CartContainer, Center, Input, Left, LinkLogo, Logo, MenuContainer, Navbar, Right, SearchContainer, Wrapper } from "./style";
 
-export function Header(){
+
+import { connect } from 'react-redux';
+import { useEffect, useState } from 'react';
+
+export const Header = ({ cart }:any) =>{
+
     const SearchByName = (name:string) =>{
         window.location.href = `/produtos/${name}`
     }
