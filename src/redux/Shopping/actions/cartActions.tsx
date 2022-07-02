@@ -1,8 +1,9 @@
 import * as actionsTypes from '../constants/cartConstants';
 
 import axios from 'axios';
+import { Dispatch } from 'redux';
 
-export const addToCart = (id:string, qty:number) => async (dispatch:any, getState:any) => {
+export const addToCart = (id:any, qty:any): (dispatch: Dispatch, getState: any) => Promise<void> => async (dispatch:Dispatch, getState:any) => {
     const {data} = await axios.get(`http://localhost:8080/Products/${id}`);
 
     dispatch({
@@ -24,7 +25,7 @@ export const addToCart = (id:string, qty:number) => async (dispatch:any, getStat
     localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems))
 }
 
-export const removeFromCart = (id:any) => ({dispatch, getState}:any) => {
+export const removeFromCart = (id:any) => (dispatch:Dispatch, getState:any) => {
     dispatch({
         type: actionsTypes.REMOVE_FROM_CART,
         payload: id

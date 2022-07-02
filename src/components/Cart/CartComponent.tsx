@@ -8,10 +8,11 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { CartItem } from "./CartItem";
+import { addToCart, removeFromCart } from "../../redux/Shopping/actions/cartActions";
 
 export const CartConteiner = () =>{
     const dispatch = useDispatch();
-    const cart = useSelector(state => state.cart);
+    const cart = useSelector((state:any) => state.cart);
     const {cartItems} = cart;
     const [frete, setfrete] = useState(0);
     const [subTotalPrice, setSubTotalPrice] = useState(0);
@@ -31,6 +32,14 @@ export const CartConteiner = () =>{
 
     }, [cartItems, totalPrice, totalItems, setTotalPrice, setTotalItems])
 
+    const qtyChangeHandler = (id:any, qty:any) =>{
+        dispatch(addToCart(id, qty))
+    }
+
+    const removeHandler = (id:any) => {
+        dispatch(removeFromCart(id))
+    }
+
     return(
         <ContentConteiner>
             <Title>
@@ -43,7 +52,7 @@ export const CartConteiner = () =>{
                             Carrinho Vazio <Link to="/">Voltar</Link>
                         </div>
                     ): cartItems.map((item:any) => (
-                        <CartItem key={item.product} itemData = {item}/>
+                        <CartItem key = {item.product} item = {item} qtyChangeHandler={qtyChangeHandler} removeHandler={removeHandler}/>
                     ))}
                 </LeftSide>
                 <RightSide>
@@ -63,7 +72,7 @@ export const CartConteiner = () =>{
                     <Last>
                         <SummaryItem  color ="total">
                             <SummaryItemText>Total</SummaryItemText>
-                            <SummaryItemPrice>R$ {totalPrice}</SummaryItemPrice>
+                            <SummaryItemPrice>R$ {totalPrice + frete}</SummaryItemPrice>
                         </SummaryItem>
                         <Button>Finalizar Compra</Button>
                     </Last>

@@ -1,36 +1,35 @@
 import { Add, Remove } from "@mui/icons-material";
 import React, { useState } from "react";
+import { Amount } from "../pageProduct/productStyle";
 import { Product, ProductDetail, Image, Details, ProductName, ProductId, ProductColor, ProductSize, ProductPrice, ProductAmountConteiner, ProductAmount, ProductPriceDetail } from "./CartStyle";
 
 
-export const CartItem = ({itemData , removeFromCart, adjustQuantity}:any) => {
+export const CartItem = ({item , removeHandler, qtyChangeHandler}:any) => {
 
-    const [input, setInput] = useState(itemData.qty);
+    const [input, setInput] = useState(item.qty);
 
-    const onChangeHandler = (e:any) =>{
-        setInput(e.target.value);
-        adjustQuantity(itemData._id, e.target.value)
-    }
     return (
         <Product>
             <ProductDetail>
-                <Image src={itemData.imageUrl}/>
+                <Image src={item.imageUrl}/>
                 <Details>
-                <ProductName><b>Produto:</b> {itemData.name} </ProductName>
-                <ProductId><b>ID:</b>{itemData.product}</ProductId>
-                <ProductColor color={itemData.color}/>
-                <ProductSize><b>Tamanho: </b>{itemData.size}</ProductSize>
+                <ProductName><b>Produto:</b> {item.name} </ProductName>
+                <ProductId><b>ID:</b>{item.product}</ProductId>
+                <ProductColor color={item.color}/>
+                <ProductSize><b>Tamanho: </b>{item.size}</ProductSize>
                 </Details>
             </ProductDetail>
             <ProductPrice>
                 <ProductAmountConteiner>
-                    <Remove cursor='pointer' onClick={()=>{setInput(input>1 ? input-1 : input)}}/>
+                    <Remove cursor='pointer' onClick={()=>{item.qty === 1 ? removeHandler(item.product) : qtyChangeHandler(item.product, item.qty - 1) ? setInput(item.qty) : input}}/>
                     <ProductAmount>
-                        <input min='1' type='number' id="qty" name="qty" value={input} onChange = {onChangeHandler}></input>
+                        <Amount>
+                            {item.qty}
+                        </Amount>
                     </ProductAmount>
-                    <Add cursor='pointer' onClick={()=>{setInput(input<itemData.countInStock ? input+1 : input)}}/>
+                    <Add cursor='pointer' onClick={()=>{item.qty < item.countInStock ? qtyChangeHandler(item.product, item.qty + input) ? setInput(item.qty) : input : input}}/>
                 </ProductAmountConteiner>
-                <ProductPriceDetail>{itemData.price}</ProductPriceDetail>
+                <ProductPriceDetail>{item.price}</ProductPriceDetail>
             </ProductPrice>
         </Product>
     )
