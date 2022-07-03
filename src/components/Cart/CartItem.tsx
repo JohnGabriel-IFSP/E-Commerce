@@ -27,7 +27,7 @@ export const CartItem = ({item , removeHandler, qtyChangeHandler}:any) => {
                             {item.qty}
                         </Amount>
                     </ProductAmount>
-                    <Add cursor='pointer' onClick={()=>{item.qty < item.countInStock ? qtyChangeHandler(item.product, item.qty + input) ? setInput(item.qty) : input : input}}/>
+                    <Add cursor='pointer' onClick={()=>{item.qty < item.countInStock ? qtyChangeHandler(item.product, item.qty + 1) ? setInput(item.qty) : input : input}}/>
                 </ProductAmountConteiner>
                 <ProductPriceDetail>{item.price}</ProductPriceDetail>
             </ProductPrice>

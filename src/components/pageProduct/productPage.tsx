@@ -6,9 +6,12 @@ import { Conteiner, ImgConteiner, Image, InfoConteiner, Title, Sobre, Price,
     AddConteiner, Amount, AmountConteiner, Button, PriorityImg, SelectImg, ImageSecondary   } from "./productStyle"
 import { useDispatch, useSelector } from "react-redux";
 
+
+
 //Actions
 import { getProductDetails } from "../../redux/Shopping/actions/productActions";
 import { addToCart } from "../../redux/Shopping/actions/cartActions";
+import { LinearProgress } from "@mui/material";
 
 export const ProductPage = () => {
 
@@ -55,7 +58,7 @@ export const ProductPage = () => {
   }
   return (
     <Conteiner>
-        {loading ? <h2>Loading...</h2> : error ? <h2>{error}</h2> : (
+        {loading ? <LinearProgress /> : error ? <h2>{error}</h2> : (
 
             <>
             <ImgConteiner>

@@ -1,8 +1,5 @@
-import { Add, Remove } from "@mui/icons-material"
-import { ContentConteiner, LeftSide, RightSide, Title, InputCEP, Button, DivFrete, Div, Text, Bottom, 
-    Product, ProductDetail, Image, Details, ProductName, ProductId, ProductColor, ProductSize, ProductPrice, Top,
-    ProductAmountConteiner, ProductAmount, Hr, ProductPriceDetail, SummaryTitle, SummaryItemText, SummaryItemPrice, 
-    SummaryItem, Last, ShippingOption, ShippingName, ShippingPrice, InputRadio, Form } from "./CartStyle"
+import { ContentConteiner, LeftSide, RightSide, Title, InputCEP, Button, DivFrete, Div, Text, Bottom, Top,
+    Hr, SummaryTitle, SummaryItemText, SummaryItemPrice, SummaryItem, Last, ShippingOption, ShippingName, ShippingPrice, InputRadio, Form } from "./CartStyle"
  
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -59,7 +56,7 @@ export const CartConteiner = () =>{
                     <SummaryTitle>Resumo do Pedido</SummaryTitle>
                     <SummaryItem>
                         <SummaryItemText>Subtotal</SummaryItemText>
-                        <SummaryItemPrice>R$ {subTotalPrice}</SummaryItemPrice>
+                        <SummaryItemPrice>R$ {subTotalPrice.toFixed(2)}</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
                         <SummaryItemText>Frete</SummaryItemText>
@@ -72,7 +69,7 @@ export const CartConteiner = () =>{
                     <Last>
                         <SummaryItem  color ="total">
                             <SummaryItemText>Total</SummaryItemText>
-                            <SummaryItemPrice>R$ {totalPrice + frete}</SummaryItemPrice>
+                            <SummaryItemPrice>R$ {totalPrice.toFixed(2)}</SummaryItemPrice>
                         </SummaryItem>
                         <Button>Finalizar Compra</Button>
                     </Last>
