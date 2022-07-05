@@ -18,8 +18,8 @@ export function CreateProduct({current}:any){
     
     const { register, handleSubmit } = useForm();
 
-    const Post = (formData:any) =>{
-        fetch('http://localhost:8080/CadastrarProduto', 
+    const Post = (formData: FormData) =>{
+        fetch(`https://api-rest-us.herokuapp.com/CadastrarProduto`, 
                 {method: "POST",
                 body:formData})
             .then(() =>{
@@ -30,7 +30,7 @@ export function CreateProduct({current}:any){
             });
     }
 
-    const postProduct = (data: any) =>{
+    const postProduct = (data: { _id: string; productName: string; category: string; size: string; inventory: string; color: string; price: string; description: string; }) =>{
         formData.append('imageOne', refImage1.current?.files[0]);
         formData.append('imageTwo', refImage2.current?.files[0]);
         formData.append('imageThree', refImage3.current?.files[0]);
@@ -45,8 +45,6 @@ export function CreateProduct({current}:any){
         formData.append('description', data.description)
         
         Post(formData)
-
-        location.reload()
     }
 
     return(

@@ -21,7 +21,7 @@ export function UpdateProduct({current}:any){
     const [image4, setImage4] = useState("");
 
     const getProductByID = async (id:any) =>{
-        const Data = await fetch(`http://localhost:8080/Products/${id}`)
+        const Data = await fetch(`https://api-rest-us.herokuapp.com/Products/${id}`)
             .then(response => response.json())
             .then(data => data)
             .catch(() => console.log("Falha ao buscar registro!"));
@@ -38,8 +38,8 @@ export function UpdateProduct({current}:any){
         setImage4(Data.imgs[3].url)
     }
  
-    const Update = async (formData:any, id:any) =>{
-        await fetch(`http://localhost:8080/UpdateProduct/${id}`, 
+    const Update = async (formData: FormData, id:string) =>{
+        await fetch(`https://api-rest-us.herokuapp.com/UpdateProduct/${id}`, 
                 {method: "PUT",
                 body:formData})
             .then(() =>{
@@ -50,7 +50,7 @@ export function UpdateProduct({current}:any){
             });
     }
 
-    const updateProduct = (data: any) =>{
+    const updateProduct = (data: { productName: string; category: string; size: string; inventory: string; color: string; price: string; description: string; }) =>{
         formData.append('imageOne', (refImage1.current?.files[0] || product.imgs[0].key));
         formData.append('imageTwo', (refImage2.current?.files[0] || product.imgs[1].key));
         formData.append('imageThree', (refImage3.current?.files[0] || product.imgs[2].key));
@@ -65,7 +65,6 @@ export function UpdateProduct({current}:any){
         
         Update(formData, product._id)
 
-        location.reload()
     }
 
     return(
