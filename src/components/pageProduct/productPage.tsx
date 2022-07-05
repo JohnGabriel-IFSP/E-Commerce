@@ -13,7 +13,7 @@ export const ProductPageConteiner = () => {
 
   useEffect(()=>{
     const fetchData = async () => {
-        const Data = await fetch(`http://localhost:8080/Products/${id}`)
+        const Data = await fetch(`https://api-rest-us.herokuapp.com/Products/${id}`)
             .then(response => response.json())
             .then(data => data)
         setItem(Data)

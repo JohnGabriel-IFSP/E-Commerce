@@ -17,22 +17,22 @@ export function Products(){
     const endIndex = startIndex + itensPerPage;
     const currentItens = itens.slice(startIndex,endIndex);
 
-    let url='';
+    let url='https://api-rest-us.herokuapp.com';
     switch(name){
         case 'all':
-            url = "http://localhost:8080/Products"
+            url = `${url}/Products`
             break;
         case 'category1':
-            url = `http://localhost:8080/Products/searchByCategory/category 1`
+            url = `${url}/Products/searchByCategory/category 1`
             break;
         case 'category2':
-            url = `http://localhost:8080/Products/searchByCategory/category 2`
+            url = `${url}/Products/searchByCategory/category 2`
             break;
         case 'category3':
-            url = `http://localhost:8080/Products/searchByCategory/category 3`
+            url = `${url}/Products/searchByCategory/category 3`
             break;
         default:
-            url = `http://localhost:8080/Products/searchByName/${name}`
+            url = `${url}/Products/searchByName/${name}`
     }
     
     useEffect(()=>{
