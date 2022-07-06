@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Dispatch } from 'redux';
 
 export const addToCart = (id:any, qty:any): (dispatch: Dispatch, getState: any) => Promise<void> => async (dispatch:Dispatch, getState:any) => {
-    const {data} = await axios.get(`https://api-rest-us.herokuapp.com/${id}`);
+    const {data} = await axios.get(`https://api-rest-us.herokuapp.com/Products/${id}`);
 
     dispatch({
         type: actionsTypes.ADD_TO_CART,
