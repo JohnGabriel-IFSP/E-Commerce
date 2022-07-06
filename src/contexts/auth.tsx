@@ -1,6 +1,7 @@
 import { Password } from "@mui/icons-material";
 import React, { createContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import { createSession } from "../services/api";
 
 
 export const AuthContext = createContext({});
@@ -13,33 +14,26 @@ export const AuthProvider = ({ children }:any) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const recoveredUser = localStorage.getItem('user');
+        const recoveredUser = localStorage.getItem('AuthToken');
 
         if(recoveredUser) {
             setUsuario(JSON.parse(recoveredUser));
-        }
-
-        setLoading(false);
+        } setLoading(false);
     }, [])
 
     const Login = (user: any, password: any) =>{
-        console.log('login auth', {user, password});
     
-        const loggedUser ={
-            id: "123",
-            user,
-        };
-    
-        localStorage.setItem("user", JSON.stringify(loggedUser));
+        createSession(user, password);
+       
         navigate("/");      
     
     };
 
     const logout = () => {
-        console.log('logout');
-        localStorage.removeItem("user");
+        localStorage.removeItem("AuthToken");
+        localStorage.removeItem("User")
         setUsuario(null);
-        navigate("/login");
+        navigate("/");
     };
 
     return (

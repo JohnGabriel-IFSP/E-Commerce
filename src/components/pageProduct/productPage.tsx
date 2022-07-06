@@ -1,21 +1,50 @@
 import { Add, Remove } from "@mui/icons-material"
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Conteiner, ImgConteiner, Image, InfoConteiner, Title, Sobre, Price, 
     FilterConteiner,Filter, FilterTitle, FilterColor, FilterSize, FilterSizeOption,
     AddConteiner, Amount, AmountConteiner, Button, PriorityImg, SelectImg, ImageSecondary   } from "./productStyle"
+import { useDispatch, useSelector } from "react-redux";
 
-export const ProductPageConteiner = () => {
+
+
+//Actions
+import { getProductDetails } from "../../redux/Shopping/actions/productActions";
+import { addToCart } from "../../redux/Shopping/actions/cartActions";
+import { LinearProgress } from "@mui/material";
+
+export const ProductPage = () => {
+
+  const [qty, setQty] = useState(1)
+  const dispatch = useDispatch();
+
+  const productDetails = useSelector((state:any) => state.getProductDetails);
+  const {loading, error, product} = productDetails;
   const { id } = useParams();
+  
+  useEffect(() =>{
+    if(product && (id) !== product._id){
+        dispatch(getProductDetails(id))
+    }
+  }, [dispatch, product, id]);
+
   const [item, setItem] = useState([]);
   const [images, setImages] = useState([]);
   const [active, setActive] = useState('');
+
+  const handleString = (string:string) =>{
+    return string[0].toUpperCase()+string.substr(1)
+  }
+
+  const navigate = useNavigate();
 
   useEffect(()=>{
     const fetchData = async () => {
         const Data = await fetch(`https://api-rest-us.herokuapp.com/Products/${id}`)
             .then(response => response.json())
             .then(data => data)
+        Data.productName = handleString(Data.productName)
+        Data.description = handleString(Data.description)
         setItem(Data)
         setImages(Data.imgs)
         setActive(Data.imgs[0].url)
@@ -23,9 +52,16 @@ export const ProductPageConteiner = () => {
     fetchData()
   }, [])
 
+  const addToCartHandler = () =>{
+    dispatch(addToCart(product._id, qty));
+    navigate('/carrinho')
+  }
   return (
     <Conteiner>
-        <ImgConteiner>
+        {loading ? <LinearProgress /> : error ? <h2>{error}</h2> : (
+
+            <>
+            <ImgConteiner>
             <PriorityImg>
                 <Image src={active}/>
             </PriorityImg>
@@ -36,30 +72,35 @@ export const ProductPageConteiner = () => {
             </SelectImg>
         </ImgConteiner>
         <InfoConteiner>
-            <Title>{item.productName}</Title>
-            <Sobre>{item.description}</Sobre>
-            <Price>R${item.price}</Price>
+            <Title>{product.productName}</Title>
+            <Sobre>{product.description}</Sobre>
+            <Price>R$ {product.price}</Price>
             <FilterConteiner>
                 <Filter>
                     <FilterTitle>Cor</FilterTitle>
-                    <FilterColor color={item.color}></FilterColor>
+                    <FilterColor color={product.color}></FilterColor>
                 </Filter>
                 <Filter>
                     <FilterTitle>Tamanho</FilterTitle>
                     <FilterSize>
-                        <FilterSizeOption>{item.size}</FilterSizeOption>
+                        <FilterSizeOption>{product.size}</FilterSizeOption>
                     </FilterSize>
                 </Filter>
             </FilterConteiner>
             <AddConteiner>
                 <AmountConteiner>
-                    <Remove/>
-                    <Amount>1</Amount>
-                    <Add/>
+                    <Remove cursor='pointer' onClick={()=>{setQty(qty > 1 ? qty-1 : qty)}}/>
+                    <Amount>{qty}</Amount>
+                    <Add cursor='pointer' onClick={()=>{setQty(qty < product.countInStock ? qty + 1 : qty)}}/>
                 </AmountConteiner>
-                <Button onClick={()=>{console.log(images)}}>Enviar para o Carrinho</Button>
+                <Button onClick={addToCartHandler}>Enviar para o Carrinho</Button>
             </AddConteiner>
         </InfoConteiner>
+            
+            </>
+
+        )}
+        
     </Conteiner>
   )
 }

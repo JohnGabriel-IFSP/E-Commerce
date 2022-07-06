@@ -1,4 +1,4 @@
-import { Header } from "../components/header/Header";
+import { Header }   from "../components/header/Header";
 import { CartConteiner } from "../components/Cart/CartComponent";
 import { Footer } from "../components/footer/Footer";
 

@@ -1,13 +1,20 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../contexts/auth';
+import { useNavigate } from 'react-router-dom';
 
 import { Google, Twitter } from '@mui/icons-material';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import {Conteiner, Leftsideconteiner, Tittle, Form, Cinput, Input, Link, Button, Rightsideconteiner, Termo} from "./style";
+import { createSession, Register } from '../../services/api';
+
+
+
 
 
 export const LoginComponent = () => {
 
+    
+    const navigate = useNavigate();
     const {authenticated, Login }:any = useContext(AuthContext);
 
     const [user, setUser] = useState("");
@@ -16,7 +23,10 @@ export const LoginComponent = () => {
     const [name, setName] = useState("");
     const [sobrenome, setSobrenome] = useState("");
     const [email, setEmail] = useState("");
+    const [rUser, setRUser] = useState("");
+    const [rPassword, setRPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [validate, setValidate] = useState('');
 
     const handleSubmitLogin = (e:any) =>{
         e.preventDefault();
@@ -24,18 +34,28 @@ export const LoginComponent = () => {
         Login(user, password);
     };
 
-    
 
-    const handleSubmitRegister = (e:any) =>{
+    function handleSubmitRegister(e: any): void {
         e.preventDefault();
-        console.log('submit', {name, sobrenome, user, email, password, confirmPassword})
+        console.log(rUser, rPassword, name, sobrenome, email);
+        Register(rUser, rPassword, name, sobrenome, email);
+
+        navigate('/');
     }
+
+    const Validate = (e:any) =>{
+        setConfirmPassword(e.target.value)
+        if(confirmPassword == rPassword){ 
+            setValidate("")
+        } else setValidate("As senhas não não iguais")
+    }
+
+    if(authenticated) navigate('/minhaconta');
 
     return (
       <Conteiner>
           <Leftsideconteiner>
               <Tittle>Login</Tittle>
-              <p>{String(authenticated)}</p>
               <Form onSubmit={handleSubmitLogin}>
                   <Input 
                   type='username' 
@@ -70,8 +90,8 @@ export const LoginComponent = () => {
                     placeholder = "Sobrenome" />
                     <Input 
                     type="username"
-                    value={user}
-                    onChange={(e) => setUser(e.target.value)}
+                    value={rUser}
+                    onChange={(e) => setRUser(e.target.value)}
                     placeholder = "Nome de usuário" />
                     <Input 
                     type="email"
@@ -81,14 +101,15 @@ export const LoginComponent = () => {
                     <Input 
                     placeholder = "Senha" 
                     type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}/>
+                    value={rPassword}
+                    onChange={(e) => setRPassword(e.target.value)}/>
                     <Input 
                     placeholder = "Confirme a Senha" 
                     type="password"
                     value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}/>
-
+                    onChange= {(e) => Validate(e)}/>
+                    
+                    <Termo>{validate}</Termo>
                     <Termo>Ao finalizar meu cadastro certifico que tenho 
                            mais de 18 anos de idade e aceito os Termos e 
                            Condições e a <b>Política de Privacidade</b>
