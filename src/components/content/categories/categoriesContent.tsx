@@ -1,14 +1,14 @@
 export default[
     {
         _id: '1',
-        title: 'Roupas Feminina',
+        title: 'Roupas Femininas',
         images:{
             main:"https://us-storage-files.s3.sa-east-1.amazonaws.com/category/category1.jpg",
         }
     },
     {
         _id: '2',
-        title: 'Roupas Masculina',
+        title: 'Roupas Masculinas',
         images:{
             main:"https://us-storage-files.s3.sa-east-1.amazonaws.com/category/category2.jpg",
         }
