@@ -6,7 +6,7 @@ export function Info(){
             <Wrapper>
                 <Description>
                     <Title>Sobre</Title>
-                    <p>Página criada para aperfeiçoamente do conteúdo trabalhado em aula no curso de Pós-graduação Lato Sensu em Desenvolvimento Web oferecido pelo Instituto Federal São Paulo Campus Itapetininga</p>
+                    <p>Página criada para o aperfeiçoamento do conteúdo aplicado nas aulas do curso de Pós-graduação Lato Sensu em Desenvolvimento Web oferecido pelo Instituto Federal São Paulo Campus Itapetininga</p>
                 </Description>
                 <Information>
                     <Title>Criadores</Title>

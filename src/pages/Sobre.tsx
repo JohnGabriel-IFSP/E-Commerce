@@ -6,7 +6,6 @@ export function Sobre(){
         <>
             <Header/>
             <Info/>
-        
         </>
     )
 }
