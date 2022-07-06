@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Amount } from "../pageProduct/productStyle";
 import { Product, ProductDetail, Image, Details, ProductName, ProductId, ProductColor, ProductSize, ProductPrice, ProductAmountConteiner, ProductAmount, ProductPriceDetail } from "./CartStyle";
 
-
 export const CartItem = ({item , removeHandler, qtyChangeHandler}:any) => {
 
     const [input, setInput] = useState(item.qty);

@@ -27,7 +27,7 @@ export const CartConteiner = () =>{
         setTotalPrice(price+frete)
         setTotalItems(items)
 
-    }, [cartItems, totalPrice, totalItems, setTotalPrice, setTotalItems])
+    }, [cartItems, totalPrice, totalItems, frete, setTotalPrice, setTotalItems])
 
     const qtyChangeHandler = (id:any, qty:any) =>{
         dispatch(addToCart(id, qty))
@@ -73,7 +73,6 @@ export const CartConteiner = () =>{
                         </SummaryItem>
                         <Button>Finalizar Compra</Button>
                     </Last>
-                    
                 </RightSide>
             </Top>
             <Hr/>

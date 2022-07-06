@@ -34,12 +34,11 @@ export const RightSide = styled.div`
     border: 0.5px solid ${({theme}) => theme.colors.primary};
     border-radius: 10px;
     padding: 20px;
-    height: 50vh;
+    height: 450px;
 
     @media screen and (max-width: 824px) {
         margin-top: 2rem;
     }
-
 `;
 
 export const Title = styled.h1`
@@ -64,9 +63,6 @@ export const Button = styled.button`
     &:hover{
         background-color: ${({theme})=> theme.colors.tertiary};
     }
-
-    
-
 `;
 
 export const DivFrete = styled.div`
