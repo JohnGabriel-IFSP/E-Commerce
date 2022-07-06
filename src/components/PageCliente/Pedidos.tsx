@@ -9,7 +9,6 @@ export const Pedidos = (item:any) => {
         <ImagePedido></ImagePedido>
         <QtdPedido></QtdPedido>
         <ValorPedido></ValorPedido>
-
     </>
   )
 }

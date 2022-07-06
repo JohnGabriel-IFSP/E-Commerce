@@ -5,7 +5,7 @@ export const getProducts = () => async (dispatch:any) => {
     try{
         dispatch({type: actionTypes.GET_PRODUCTS_REQUEST});
 
-        const { data } = await axios.get(`http://localhost:8080/Products`);
+        const { data } = await axios.get(`https://api-rest-us.herokuapp.com/Products`);
 
         dispatch({
             type: actionTypes.GET_PRODUCTS_SUCCESS,
@@ -23,7 +23,7 @@ export const getProductDetails = (id:any) => async (dispatch:any) => {
     try{
         dispatch({type: actionTypes.GET_PRODUCT_DETAILS_REQUEST});
 
-        const { data } = await axios.get(`http://localhost:8080/Products/${id}`);
+        const { data } = await axios.get(`https://api-rest-us.herokuapp.com/Products/${id}`);
 
         dispatch({
             type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS,

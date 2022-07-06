@@ -15,7 +15,6 @@ import { Produtos } from './pages/Produtos'
 import { ProdutoUnico } from './pages/ProdutoUnico'
 import { Sobre } from './pages/Sobre'
 import { MinhaConta } from './pages/MinhaConta'
-
 import { AuthProvider, AuthContext } from './contexts/auth'
 
 export function AppRoutes(){
@@ -30,7 +29,6 @@ export function AppRoutes(){
         if(!authenticated){
             return <Navigate to="/login" />
         }
-
         return children;
     }
 

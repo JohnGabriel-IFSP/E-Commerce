@@ -5,10 +5,6 @@ import { Conteiner, ImgConteiner, Image, InfoConteiner, Title, Sobre, Price,
     FilterConteiner,Filter, FilterTitle, FilterColor, FilterSize, FilterSizeOption,
     AddConteiner, Amount, AmountConteiner, Button, PriorityImg, SelectImg, ImageSecondary   } from "./productStyle"
 import { useDispatch, useSelector } from "react-redux";
-
-
-
-//Actions
 import { getProductDetails } from "../../redux/Shopping/actions/productActions";
 import { addToCart } from "../../redux/Shopping/actions/cartActions";
 import { LinearProgress } from "@mui/material";
@@ -59,48 +55,44 @@ export const ProductPage = () => {
   return (
     <Conteiner>
         {loading ? <LinearProgress /> : error ? <h2>{error}</h2> : (
-
             <>
-            <ImgConteiner>
-            <PriorityImg>
-                <Image src={active}/>
-            </PriorityImg>
-            <SelectImg>
-                {images.map((image:any)=> (
-                    <ImageSecondary key={image._id} onClick={()=>{setActive(image.url)}} src={image.url}/>
-                ))}
-            </SelectImg>
-        </ImgConteiner>
-        <InfoConteiner>
-            <Title>{product.productName}</Title>
-            <Sobre>{product.description}</Sobre>
-            <Price>R$ {product.price}</Price>
-            <FilterConteiner>
-                <Filter>
-                    <FilterTitle>Cor</FilterTitle>
-                    <FilterColor color={product.color}></FilterColor>
-                </Filter>
-                <Filter>
-                    <FilterTitle>Tamanho</FilterTitle>
-                    <FilterSize>
-                        <FilterSizeOption>{product.size}</FilterSizeOption>
-                    </FilterSize>
-                </Filter>
-            </FilterConteiner>
-            <AddConteiner>
-                <AmountConteiner>
-                    <Remove cursor='pointer' onClick={()=>{setQty(qty > 1 ? qty-1 : qty)}}/>
-                    <Amount>{qty}</Amount>
-                    <Add cursor='pointer' onClick={()=>{setQty(qty < product.countInStock ? qty + 1 : qty)}}/>
-                </AmountConteiner>
-                <Button onClick={addToCartHandler}>Enviar para o Carrinho</Button>
-            </AddConteiner>
-        </InfoConteiner>
-            
+                <ImgConteiner>
+                    <PriorityImg>
+                        <Image src={active}/>
+                    </PriorityImg>
+                    <SelectImg>
+                        {images.map((image:any)=> (
+                            <ImageSecondary key={image._id} onClick={()=>{setActive(image.url)}} src={image.url}/>
+                        ))}
+                    </SelectImg>
+                </ImgConteiner>
+                <InfoConteiner>
+                    <Title>{product.productName}</Title>
+                    <Sobre>{product.description}</Sobre>
+                    <Price>R$ {product.price}</Price>
+                    <FilterConteiner>
+                        <Filter>
+                            <FilterTitle>Cor</FilterTitle>
+                            <FilterColor color={product.color}></FilterColor>
+                        </Filter>
+                        <Filter>
+                            <FilterTitle>Tamanho</FilterTitle>
+                            <FilterSize>
+                                <FilterSizeOption>{product.size}</FilterSizeOption>
+                            </FilterSize>
+                        </Filter>
+                    </FilterConteiner>
+                    <AddConteiner>
+                        <AmountConteiner>
+                            <Remove cursor='pointer' onClick={()=>{setQty(qty > 1 ? qty-1 : qty)}}/>
+                            <Amount>{qty}</Amount>
+                            <Add cursor='pointer' onClick={()=>{setQty(qty < product.countInStock ? qty + 1 : qty)}}/>
+                        </AmountConteiner>
+                        <Button onClick={addToCartHandler}>Enviar para o Carrinho</Button>
+                    </AddConteiner>
+                </InfoConteiner>
             </>
-
         )}
-        
     </Conteiner>
   )
 }

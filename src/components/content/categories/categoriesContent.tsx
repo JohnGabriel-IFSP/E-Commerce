@@ -1,37 +1,23 @@
 export default[
     {
         _id: '1',
-        title: 'First Category',
-        description: "Sample of description category",
+        title: 'Roupas Feminina',
         images:{
-            main:"https://static.stealthelook.com.br/wp-content/uploads/2021/05/amy-shaw-silvie-mus-stl-me-ajuda-como-usar-roupas-oversized-monikh-dale-looks-oversized-20210530211139.jpg",
-            image1:"",
-            image2:"",
-            image3:"",
+            main:"https://us-storage-files.s3.sa-east-1.amazonaws.com/category/category1.jpg",
         }
     },
     {
         _id: '2',
-        title: 'Second Category',
-        price: 'R$999.99',
-        description: "Sample of description category",
+        title: 'Roupas Masculina',
         images:{
-            main:"https://static.stealthelook.com.br/wp-content/uploads/2021/05/amy-shaw-silvie-mus-stl-me-ajuda-como-usar-roupas-oversized-monikh-dale-looks-oversized-20210530211139.jpg",
-            image1:"",
-            image2:"",
-            image3:"",
+            main:"https://us-storage-files.s3.sa-east-1.amazonaws.com/category/category2.jpg",
         }
     },
     {
         _id: '3',
-        title: 'Third Category',
-        price: 'R$999.99',
-        description: "Sample of description category",
+        title: 'Roupas Infantis',
         images:{
-            main:"https://static.stealthelook.com.br/wp-content/uploads/2021/05/amy-shaw-silvie-mus-stl-me-ajuda-como-usar-roupas-oversized-monikh-dale-looks-oversized-20210530211139.jpg",
-            image1:"",
-            image2:"",
-            image3:"",
+            main:"https://us-storage-files.s3.sa-east-1.amazonaws.com/category/category3.jpg",
         }
     },
 ];

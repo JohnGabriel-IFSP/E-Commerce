@@ -1,18 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../contexts/auth';
 import { useNavigate } from 'react-router-dom';
-
 import { Google, Twitter } from '@mui/icons-material';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import {Conteiner, Leftsideconteiner, Tittle, Form, Cinput, Input, Link, Button, Rightsideconteiner, Termo} from "./style";
 import { createSession, Register } from '../../services/api';
 
-
-
-
-
 export const LoginComponent = () => {
-
     
     const navigate = useNavigate();
     const {authenticated, Login }:any = useContext(AuthContext);
@@ -30,14 +24,11 @@ export const LoginComponent = () => {
 
     const handleSubmitLogin = (e:any) =>{
         e.preventDefault();
-        console.log("submit", {user, password});
         Login(user, password);
     };
 
-
     function handleSubmitRegister(e: any): void {
         e.preventDefault();
-        console.log(rUser, rPassword, name, sobrenome, email);
         Register(rUser, rPassword, name, sobrenome, email);
 
         navigate('/');

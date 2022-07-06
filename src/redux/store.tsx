@@ -3,8 +3,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk';
-
-//Reducers
 import { cartReducer } from './Shopping/reducers/cartReducer'
 import { getProductDetailsReducer, getProductsReducer } from './Shopping/reducers/productReducers';
 

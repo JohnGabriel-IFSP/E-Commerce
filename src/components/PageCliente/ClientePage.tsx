@@ -4,10 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { ConteinerPrincipal, Conteiner, Wrapper1, Wrapper2, Item, InfoUser, Title, Div, Input, Label } from "../PageCliente/ClienteStyle"
 import { AuthContext } from "../../contexts/auth";
 
-
-
-
-
 export const ClientePage = () => {
   
     const {Logout}:any = useContext(AuthContext);
@@ -27,15 +23,12 @@ export const ClientePage = () => {
         else{
             Logout();
         }
-
-
-    
+        
     const LimpaUser = () =>{
         localStorage.removeItem("User");
         localStorage.removeItem("AuthToken");
         navigate("/")
     }
-
 
     return (
         <ConteinerPrincipal>
@@ -60,11 +53,8 @@ export const ClientePage = () => {
                     <Label>Conta Criada em:</Label>
                     <Input type="text" placeholder={user.created_at} />
                 </InfoUser>
-               
             </Wrapper2>
         </Conteiner>
         </ConteinerPrincipal>
-        
     )
-
 }

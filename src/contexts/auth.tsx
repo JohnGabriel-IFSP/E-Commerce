@@ -3,9 +3,7 @@ import React, { createContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { createSession } from "../services/api";
 
-
 export const AuthContext = createContext({});
-
 
 export const AuthProvider = ({ children }:any) => {
     const navigate = useNavigate();
@@ -22,11 +20,8 @@ export const AuthProvider = ({ children }:any) => {
     }, [])
 
     const Login = (user: any, password: any) =>{
-    
         createSession(user, password);
-       
         navigate("/");      
-    
     };
 
     const logout = () => {
@@ -42,6 +37,5 @@ export const AuthProvider = ({ children }:any) => {
             { children }
         </AuthContext.Provider>
     )
-
 }
 
