@@ -30,14 +30,14 @@ export function Payments({display}:paymentsProps){
     return(
         <ImageContainer display={display}>
             <CardContainer>
-                <Image src="src\assets\icons\payments\master.png"/>
-                <Image src="src\assets\icons\payments\visa.png"/>
-                <Image src="src\assets\icons\payments\elo.png"/>
-                <Image src="src\assets\icons\payments\american.png"/>
-                <Image src="src\assets\icons\payments\dinner.png"/>
-                <Image src="src\assets\icons\payments\pix.png"/>
-                <Image src="src\assets\icons\payments\paypal.png"/>
-                <Image src="src\assets\icons\payments\boleto.png"/>
+                <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/payments/master.png"/>
+                <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/payments/visa.png"/>
+                <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/payments/elo.png"/>
+                <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/payments/american.png"/>
+                <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/payments/dinner.png"/>
+                <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/payments/pix.png"/>
+                <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/payments/paypal.png"/>
+                <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/payments/boleto.png"/>
             </CardContainer>
         </ImageContainer>
     )

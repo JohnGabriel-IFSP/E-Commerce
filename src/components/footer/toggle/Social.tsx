@@ -44,15 +44,15 @@ export function Social({display}:socialProps){
         <SocialContainer display={display}>
             <CardContainer>
                 <SocialMidia href="/1">
-                    <Image src="src\assets\icons\social\facebook-48.png"/>
+                    <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/social/facebook-48.png"/>
                     <TextContainer>Facebook</TextContainer>
                 </SocialMidia>
                 <SocialMidia href="/2">
-                    <Image src="src\assets\icons\social\instagram-48.png"/>
+                    <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/social/instagram-48.png"/>
                     <TextContainer>Instagram</TextContainer>
                 </SocialMidia>
                 <SocialMidia href="/3">
-                    <Image src="src\assets\icons\social\twitter-48.png"/>
+                    <Image src="https://us-storage-files.s3.sa-east-1.amazonaws.com/social/twitter-48.png"/>
                     <TextContainer>Twitter</TextContainer>
                 </SocialMidia>
             </CardContainer>
