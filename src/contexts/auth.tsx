@@ -23,17 +23,17 @@ export const AuthProvider = ({ children }:any) => {
 
     const Login = (user: any, password: any) =>{
     
-        const loggedUser = createSession(user, password);
+        createSession(user, password);
        
         navigate("/");      
     
     };
 
     const logout = () => {
-        console.log('logout');
         localStorage.removeItem("AuthToken");
+        localStorage.removeItem("User")
         setUsuario(null);
-        navigate("/login");
+        navigate("/");
     };
 
     return (

@@ -8,6 +8,9 @@ import {Conteiner, Leftsideconteiner, Tittle, Form, Cinput, Input, Link, Button,
 import { createSession, Register } from '../../services/api';
 
 
+
+
+
 export const LoginComponent = () => {
 
     
@@ -31,14 +34,13 @@ export const LoginComponent = () => {
         Login(user, password);
     };
 
-    
 
-    const handleSubmitRegister = (e:any) =>{
+    function handleSubmitRegister(e: any): void {
         e.preventDefault();
         console.log(rUser, rPassword, name, sobrenome, email);
         Register(rUser, rPassword, name, sobrenome, email);
 
-        navigate('/')
+        navigate('/');
     }
 
     const Validate = (e:any) =>{
@@ -48,11 +50,12 @@ export const LoginComponent = () => {
         } else setValidate("As senhas não não iguais")
     }
 
+    if(authenticated) navigate('/minhaconta');
+
     return (
       <Conteiner>
           <Leftsideconteiner>
               <Tittle>Login</Tittle>
-              <p>{String(authenticated)}</p>
               <Form onSubmit={handleSubmitLogin}>
                   <Input 
                   type='username' 
