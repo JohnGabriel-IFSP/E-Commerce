@@ -1,4 +1,12 @@
+import { Info } from "../components/content/info/Info";
+import { Header } from "../components/header/Header";
 
 export function Sobre(){
-    return <h1>Sobre</h1>
+    return (
+        <>
+            <Header/>
+            <Info/>
+        
+        </>
+    )
 }
